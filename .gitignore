@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+# Imperivm III
+launcher imperivm iii\bin\Debug\local
