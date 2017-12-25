@@ -63,6 +63,8 @@ namespace launcher_imperivm_iii
 
             loadLanguageLauncher();
 
+            loadFolderMods();
+
         }
 
 
@@ -99,12 +101,46 @@ namespace launcher_imperivm_iii
                 tabPage1.Text = parser.GetSetting(defaultLanguage, "Page1");
                 tabPage2.Text = parser.GetSetting(defaultLanguage, "Page2");
                 tabPage3.Text = parser.GetSetting(defaultLanguage, "Page3");
+                tabPage4.Text = parser.GetSetting(defaultLanguage, "Page4");
             } 
+        }
+
+        private void loadFolderMods()
+        {
+            List<string> noMods = new List<string> { "AdditionalArt", "Buildings", "data", "emptyadv", "emptyconquest", "emptyscn", "Fonts", "MapObjects", "Minimap", "newmap", "Outlines", "randommap", "RandomMap", "RandomMapSettlements", "Sounds", "Terrain", "UI", "Units", "Visuals" };
+            var pakMods = new DirectoryInfo("Packs").GetFiles("*.pak");
+            for (int i = 0; i < pakMods.Length; i++)
+            {
+                String name = pakMods[i].Name.Split('.')[0];
+                if (!noMods.Contains(name))
+                {
+                    listMods.Items.Add(name.ToLower());
+                    if (name!=name.ToUpper())
+                    {
+                        listMods.SetItemChecked(listMods.FindStringExact(name.ToLower()), true);
+                    }
+                    
+                }
+            }
         }
 
         private void language_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadLanguageLauncher();
+        }
+
+        private void listMods_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            String item = listMods.Items[e.Index].ToString();
+            if (listMods.GetItemChecked(listMods.FindStringExact(item)))
+            {
+                System.IO.File.Move(@"Packs/" + item + ".pak", @"Packs/" + item.ToUpper() + ".pak");
+            }
+            else
+            { 
+                System.IO.File.Move(@"Packs/" + item.ToUpper() + ".pak", @"Packs/" + item + ".pak");
+            }
+            
         }
     }
 }
