@@ -21,7 +21,6 @@ namespace launcher_imperivm_iii
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
 
             IniParser parser = new IniParser(@"Settings.ini");
 
@@ -33,7 +32,6 @@ namespace launcher_imperivm_iii
             Process.Start(@"gbr.exe");
 
             Application.Exit();
-
 
         }
 
@@ -63,6 +61,8 @@ namespace launcher_imperivm_iii
 
             resolution.SelectedIndex = int.Parse(resolutionDefault);
 
+            loadLanguageLauncher();
+
         }
 
 
@@ -78,7 +78,29 @@ namespace launcher_imperivm_iii
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("mailto:daniel.jerez@fxgamestudio.com");
+            Process.Start("mailto:daniel.jerez@fxgamestudio.com");
+        }
+
+        private void loadLanguageLauncher()
+        {
+            IniParser parser = new IniParser(@"Launcher.ini");
+
+            if (parser!=null)
+            {
+                parser.AddSetting("Default", "Language", language.Text);
+                parser.SaveSettings();
+
+                String defaultLanguage = parser.GetSetting("Default", "Language");
+
+                labelLanguage.Text = parser.GetSetting(defaultLanguage, "LabelLanguage");
+                labelResolution.Text = parser.GetSetting(defaultLanguage, "LabelResolution");
+                playButton.Text = parser.GetSetting(defaultLanguage, "ButtonPlay");
+            } 
+        }
+
+        private void language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadLanguageLauncher();
         }
     }
 }

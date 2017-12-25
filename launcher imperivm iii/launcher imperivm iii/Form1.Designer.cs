@@ -30,7 +30,7 @@
         {
             this.resolution = new System.Windows.Forms.ComboBox();
             this.labelResolution = new System.Windows.Forms.Label();
-            this.play = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.Button();
             this.labelLanguage = new System.Windows.Forms.Label();
             this.language = new System.Windows.Forms.ComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -53,15 +53,15 @@
             this.labelResolution.TabIndex = 1;
             this.labelResolution.Text = "Resolution";
             // 
-            // play
+            // playButton
             // 
-            this.play.Location = new System.Drawing.Point(212, 37);
-            this.play.Name = "play";
-            this.play.Size = new System.Drawing.Size(75, 23);
-            this.play.TabIndex = 2;
-            this.play.Text = "Play";
-            this.play.UseVisualStyleBackColor = true;
-            this.play.Click += new System.EventHandler(this.button1_Click);
+            this.playButton.Location = new System.Drawing.Point(212, 37);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(75, 23);
+            this.playButton.TabIndex = 2;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelLanguage
             // 
@@ -79,6 +79,8 @@
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(121, 21);
             this.language.TabIndex = 3;
+            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
+           
             // 
             // linkLabel1
             // 
@@ -99,7 +101,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.labelLanguage);
             this.Controls.Add(this.language);
-            this.Controls.Add(this.play);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.labelResolution);
             this.Controls.Add(this.resolution);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -116,7 +118,7 @@
 
         private System.Windows.Forms.ComboBox resolution;
         private System.Windows.Forms.Label labelResolution;
-        private System.Windows.Forms.Button play;
+        private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.ComboBox language;
         private System.Windows.Forms.LinkLabel linkLabel1;
