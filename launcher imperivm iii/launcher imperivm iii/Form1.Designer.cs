@@ -33,13 +33,20 @@
             this.playButton = new System.Windows.Forms.Button();
             this.labelLanguage = new System.Windows.Forms.Label();
             this.language = new System.Windows.Forms.ComboBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // resolution
             // 
             this.resolution.FormattingEnabled = true;
-            this.resolution.Location = new System.Drawing.Point(74, 39);
+            this.resolution.Location = new System.Drawing.Point(92, 281);
             this.resolution.Name = "resolution";
             this.resolution.Size = new System.Drawing.Size(121, 21);
             this.resolution.TabIndex = 0;
@@ -47,7 +54,7 @@
             // labelResolution
             // 
             this.labelResolution.AutoSize = true;
-            this.labelResolution.Location = new System.Drawing.Point(11, 42);
+            this.labelResolution.Location = new System.Drawing.Point(29, 284);
             this.labelResolution.Name = "labelResolution";
             this.labelResolution.Size = new System.Drawing.Size(57, 13);
             this.labelResolution.TabIndex = 1;
@@ -55,7 +62,7 @@
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(212, 37);
+            this.playButton.Location = new System.Drawing.Point(230, 279);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(75, 23);
             this.playButton.TabIndex = 2;
@@ -66,7 +73,7 @@
             // labelLanguage
             // 
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(11, 15);
+            this.labelLanguage.Location = new System.Drawing.Point(29, 257);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(55, 13);
             this.labelLanguage.TabIndex = 4;
@@ -75,42 +82,85 @@
             // language
             // 
             this.language.FormattingEnabled = true;
-            this.language.Location = new System.Drawing.Point(74, 12);
+            this.language.Location = new System.Drawing.Point(92, 254);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(121, 21);
             this.language.TabIndex = 3;
             this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
-           
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(336, 383);
+            this.tabControl1.TabIndex = 6;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.resolution);
+            this.tabPage1.Controls.Add(this.labelResolution);
+            this.tabPage1.Controls.Add(this.labelLanguage);
+            this.tabPage1.Controls.Add(this.playButton);
+            this.tabPage1.Controls.Add(this.language);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(328, 357);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "General";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(545, 359);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Advanced";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.linkLabel1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(328, 357);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Credits";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(71, 73);
+            this.linkLabel1.Location = new System.Drawing.Point(87, 323);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(156, 13);
-            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "daniel.jerez@fxgamestudio.com";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 100);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.labelLanguage);
-            this.Controls.Add(this.language);
-            this.Controls.Add(this.playButton);
-            this.Controls.Add(this.labelResolution);
-            this.Controls.Add(this.resolution);
+            this.ClientSize = new System.Drawing.Size(335, 382);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Imperivm III HD - Beta";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -121,6 +171,10 @@
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.ComboBox language;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

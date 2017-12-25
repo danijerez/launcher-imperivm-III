@@ -95,6 +95,10 @@ namespace launcher_imperivm_iii
                 labelLanguage.Text = parser.GetSetting(defaultLanguage, "LabelLanguage");
                 labelResolution.Text = parser.GetSetting(defaultLanguage, "LabelResolution");
                 playButton.Text = parser.GetSetting(defaultLanguage, "ButtonPlay");
+
+                tabPage1.Text = parser.GetSetting(defaultLanguage, "Page1");
+                tabPage2.Text = parser.GetSetting(defaultLanguage, "Page2");
+                tabPage3.Text = parser.GetSetting(defaultLanguage, "Page3");
             } 
         }
 
