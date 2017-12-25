@@ -14,6 +14,10 @@ namespace launcher_imperivm_iii
 {
     public partial class Form1 : Form
     {
+
+        IniParser parserSettings = new IniParser(@"Settings.ini");
+        IniParser parserLauncher = new IniParser(@"Launcher.ini");
+
         public Form1()
         {
             InitializeComponent();
@@ -22,17 +26,20 @@ namespace launcher_imperivm_iii
         private void button1_Click(object sender, EventArgs e)
         {
 
-            IniParser parser = new IniParser(@"Settings.ini");
 
-            parser.AddSetting("Language", "Default", language.Text);
-            parser.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
-
-            parser.SaveSettings();
-
+            changeLanguageResolution();
+            
             Process.Start(@"gbr.exe");
 
             Application.Exit();
 
+        }
+
+        private void changeLanguageResolution()
+        {
+            parserSettings.AddSetting("Language", "Default", language.Text);
+            parserSettings.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
+            parserSettings.SaveSettings();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,23 +92,24 @@ namespace launcher_imperivm_iii
 
         private void loadLanguageLauncher()
         {
-            IniParser parser = new IniParser(@"Launcher.ini");
+            
 
-            if (parser!=null)
+            if (parserLauncher != null)
             {
-                parser.AddSetting("Default", "Language", language.Text);
-                parser.SaveSettings();
+                parserLauncher.AddSetting("Default", "Language", language.Text);
+                parserLauncher.SaveSettings();
 
-                String defaultLanguage = parser.GetSetting("Default", "Language");
+                String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
 
-                labelLanguage.Text = parser.GetSetting(defaultLanguage, "LabelLanguage");
-                labelResolution.Text = parser.GetSetting(defaultLanguage, "LabelResolution");
-                playButton.Text = parser.GetSetting(defaultLanguage, "ButtonPlay");
+                labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
+                labelResolution.Text = parserLauncher.GetSetting(defaultLanguage, "LabelResolution");
+                playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
+                saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
 
-                tabPage1.Text = parser.GetSetting(defaultLanguage, "Page1");
-                tabPage2.Text = parser.GetSetting(defaultLanguage, "Page2");
-                tabPage3.Text = parser.GetSetting(defaultLanguage, "Page3");
-                tabPage4.Text = parser.GetSetting(defaultLanguage, "Page4");
+                tabPage1.Text = parserLauncher.GetSetting(defaultLanguage, "Page1");
+                tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
+                tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
+                tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
             } 
         }
 
@@ -141,6 +149,12 @@ namespace launcher_imperivm_iii
                 System.IO.File.Move(@"Packs/" + item.ToUpper() + ".pak", @"Packs/" + item + ".pak");
             }
             
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            changeLanguageResolution();
+            parserLauncher.SaveSettings();
         }
     }
 }
