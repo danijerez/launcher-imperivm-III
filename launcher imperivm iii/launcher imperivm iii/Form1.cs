@@ -107,7 +107,7 @@ namespace launcher_imperivm_iii
                 saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
 
                 tabPage1.Text = parserLauncher.GetSetting(defaultLanguage, "Page1");
-                tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
+                //tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
                 tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
                 tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
             } 
@@ -155,6 +155,16 @@ namespace launcher_imperivm_iii
         {
             changeLanguageResolution();
             parserLauncher.SaveSettings();
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.haemimontgames.com");
         }
     }
 }
