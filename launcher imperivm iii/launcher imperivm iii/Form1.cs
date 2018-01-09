@@ -15,12 +15,15 @@ namespace launcher_imperivm_iii
     public partial class Form1 : Form
     {
 
+
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
-
+      
         public Form1()
         {
             InitializeComponent();
+            this.tabControl1.TabPages[0].BackColor = Color.Transparent;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,8 +31,14 @@ namespace launcher_imperivm_iii
 
 
             changeLanguageResolution();
-            
-            Process.Start(@"gbr.exe");
+            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+            if (checkBox1.Checked)
+            {
+                processStartInfo.Verb = "runas";
+            }
+            processStartInfo.FileName = @"gbr.exe";
+            System.Diagnostics.Process.Start(processStartInfo);
+            //Process.Start(@"gbr.exe");
 
             Application.Exit();
 
@@ -38,7 +47,7 @@ namespace launcher_imperivm_iii
         private void changeLanguageResolution()
         {
             parserSettings.AddSetting("Language", "Default", language.Text);
-            parserSettings.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
+            //parserSettings.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
             parserSettings.SaveSettings();
         }
 
@@ -58,15 +67,14 @@ namespace launcher_imperivm_iii
 
             String resolutionDefault = (parser.GetSetting("Options", "Resolution"));
 
-            resolution.Items.Add("1024 x 768");
+            /*resolution.Items.Add("1024 x 768");
             resolution.Items.Add("1152 x 864");
             resolution.Items.Add("1280 x 1024");
             resolution.Items.Add("1280 x 720");
             resolution.Items.Add("1366 x 768");
-            resolution.Items.Add("1440 x 900");
-            resolution.Items.Add("1920 x 1080");
+            resolution.Items.Add("1920 x 1080");*/
 
-            resolution.SelectedIndex = int.Parse(resolutionDefault);
+            //resolution.SelectedIndex = int.Parse(resolutionDefault);
 
             loadLanguageLauncher();
 
@@ -102,7 +110,7 @@ namespace launcher_imperivm_iii
                 String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
 
                 labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
-                labelResolution.Text = parserLauncher.GetSetting(defaultLanguage, "LabelResolution");
+                //labelResolution.Text = parserLauncher.GetSetting(defaultLanguage, "LabelResolution");
                 playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
                 saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
 
@@ -159,12 +167,27 @@ namespace launcher_imperivm_iii
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            Process.Start("www.imperivm-world.forumcommunity.net");
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://www.haemimontgames.com");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://www.fxgamestudio.com/");
         }
     }
 }
