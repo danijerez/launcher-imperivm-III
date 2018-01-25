@@ -37,8 +37,6 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.buttonAdventures = new System.Windows.Forms.Button();
-            this.buttonScenarios = new System.Windows.Forms.Button();
             this.listMods = new System.Windows.Forms.CheckedListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -49,15 +47,22 @@
             this.playButton = new System.Windows.Forms.Button();
             this.labelLanguage = new System.Windows.Forms.Label();
             this.language = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonAdventures = new System.Windows.Forms.Button();
+            this.buttonScenarios = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonProfiles = new System.Windows.Forms.Button();
+            this.buttonConquest = new System.Windows.Forms.Button();
+            this.buttonPacks = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -137,8 +142,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.buttonAdventures);
-            this.tabPage3.Controls.Add(this.buttonScenarios);
+            this.tabPage3.Controls.Add(this.buttonPacks);
             this.tabPage3.Controls.Add(this.listMods);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -146,32 +150,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODs";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdventures
-            // 
-            this.buttonAdventures.BackColor = System.Drawing.Color.Black;
-            this.buttonAdventures.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdventures.ForeColor = System.Drawing.Color.White;
-            this.buttonAdventures.Location = new System.Drawing.Point(204, 264);
-            this.buttonAdventures.Name = "buttonAdventures";
-            this.buttonAdventures.Size = new System.Drawing.Size(85, 28);
-            this.buttonAdventures.TabIndex = 9;
-            this.buttonAdventures.Text = "Adventures";
-            this.buttonAdventures.UseVisualStyleBackColor = false;
-            this.buttonAdventures.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // buttonScenarios
-            // 
-            this.buttonScenarios.BackColor = System.Drawing.Color.Black;
-            this.buttonScenarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonScenarios.ForeColor = System.Drawing.Color.White;
-            this.buttonScenarios.Location = new System.Drawing.Point(113, 264);
-            this.buttonScenarios.Name = "buttonScenarios";
-            this.buttonScenarios.Size = new System.Drawing.Size(85, 28);
-            this.buttonScenarios.TabIndex = 8;
-            this.buttonScenarios.Text = "Scenarios";
-            this.buttonScenarios.UseVisualStyleBackColor = false;
-            this.buttonScenarios.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // listMods
             // 
@@ -181,13 +159,14 @@
             this.listMods.FormattingEnabled = true;
             this.listMods.Location = new System.Drawing.Point(13, 14);
             this.listMods.Name = "listMods";
-            this.listMods.Size = new System.Drawing.Size(356, 244);
+            this.listMods.Size = new System.Drawing.Size(356, 274);
             this.listMods.TabIndex = 0;
             this.listMods.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listMods_ItemCheck);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -298,6 +277,45 @@
             this.language.TabIndex = 3;
             this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.Controls.Add(this.buttonProfiles);
+            this.tabPage2.Controls.Add(this.buttonConquest);
+            this.tabPage2.Controls.Add(this.buttonAdventures);
+            this.tabPage2.Controls.Add(this.buttonScenarios);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(380, 300);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Utilities";
+            // 
+            // buttonAdventures
+            // 
+            this.buttonAdventures.BackColor = System.Drawing.Color.Black;
+            this.buttonAdventures.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdventures.ForeColor = System.Drawing.Color.White;
+            this.buttonAdventures.Location = new System.Drawing.Point(193, 136);
+            this.buttonAdventures.Name = "buttonAdventures";
+            this.buttonAdventures.Size = new System.Drawing.Size(85, 28);
+            this.buttonAdventures.TabIndex = 11;
+            this.buttonAdventures.Text = "Adventures";
+            this.buttonAdventures.UseVisualStyleBackColor = false;
+            this.buttonAdventures.Click += new System.EventHandler(this.buttonAdventures_Click);
+            // 
+            // buttonScenarios
+            // 
+            this.buttonScenarios.BackColor = System.Drawing.Color.Black;
+            this.buttonScenarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonScenarios.ForeColor = System.Drawing.Color.White;
+            this.buttonScenarios.Location = new System.Drawing.Point(102, 136);
+            this.buttonScenarios.Name = "buttonScenarios";
+            this.buttonScenarios.Size = new System.Drawing.Size(85, 28);
+            this.buttonScenarios.TabIndex = 10;
+            this.buttonScenarios.Text = "Scenarios";
+            this.buttonScenarios.UseVisualStyleBackColor = false;
+            this.buttonScenarios.Click += new System.EventHandler(this.buttonScenarios_Click);
+            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
@@ -324,6 +342,45 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "All rights reserved (2018)";
             // 
+            // buttonProfiles
+            // 
+            this.buttonProfiles.BackColor = System.Drawing.Color.Black;
+            this.buttonProfiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonProfiles.ForeColor = System.Drawing.Color.White;
+            this.buttonProfiles.Location = new System.Drawing.Point(193, 170);
+            this.buttonProfiles.Name = "buttonProfiles";
+            this.buttonProfiles.Size = new System.Drawing.Size(85, 28);
+            this.buttonProfiles.TabIndex = 13;
+            this.buttonProfiles.Text = "Profiles";
+            this.buttonProfiles.UseVisualStyleBackColor = false;
+            this.buttonProfiles.Click += new System.EventHandler(this.buttonProfiles_Click);
+            // 
+            // buttonConquest
+            // 
+            this.buttonConquest.BackColor = System.Drawing.Color.Black;
+            this.buttonConquest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConquest.ForeColor = System.Drawing.Color.White;
+            this.buttonConquest.Location = new System.Drawing.Point(102, 170);
+            this.buttonConquest.Name = "buttonConquest";
+            this.buttonConquest.Size = new System.Drawing.Size(85, 28);
+            this.buttonConquest.TabIndex = 12;
+            this.buttonConquest.Text = "Conquest";
+            this.buttonConquest.UseVisualStyleBackColor = false;
+            this.buttonConquest.Click += new System.EventHandler(this.buttonConquest_Click);
+            // 
+            // buttonPacks
+            // 
+            this.buttonPacks.BackColor = System.Drawing.Color.Black;
+            this.buttonPacks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPacks.ForeColor = System.Drawing.Color.White;
+            this.buttonPacks.Location = new System.Drawing.Point(274, 251);
+            this.buttonPacks.Name = "buttonPacks";
+            this.buttonPacks.Size = new System.Drawing.Size(85, 28);
+            this.buttonPacks.TabIndex = 11;
+            this.buttonPacks.Text = "Packs";
+            this.buttonPacks.UseVisualStyleBackColor = false;
+            this.buttonPacks.Click += new System.EventHandler(this.buttonPacks_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +405,7 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,8 +432,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button buttonAdventures;
         private System.Windows.Forms.Button buttonScenarios;
+        private System.Windows.Forms.Button buttonProfiles;
+        private System.Windows.Forms.Button buttonConquest;
+        private System.Windows.Forms.Button buttonPacks;
     }
 }
 

@@ -114,8 +114,11 @@ namespace launcher_imperivm_iii
                 saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
                 buttonAdventures.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonAdventures");
                 buttonScenarios.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonScenarios");
+                buttonProfiles.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonProfiles");
+                buttonConquest.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonConquest");
 
                 tabPage1.Text = parserLauncher.GetSetting(defaultLanguage, "Page1");
+                tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
                 tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
                 tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
 
@@ -207,14 +210,29 @@ namespace launcher_imperivm_iii
             Process.Start("http://www.fxgamestudio.com/");
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void buttonScenarios_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", @"Scenarios");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAdventures_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", @"Adventures");
+        }
+
+        private void buttonConquest_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Conquests");
+        }
+
+        private void buttonProfiles_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Profiles");
+        }
+
+        private void buttonPacks_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Packs"); 
         }
     }
 }
