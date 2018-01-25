@@ -110,14 +110,23 @@ namespace launcher_imperivm_iii
                 String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
 
                 labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
-                //labelResolution.Text = parserLauncher.GetSetting(defaultLanguage, "LabelResolution");
                 playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
                 saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
+                buttonAdventures.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonAdventures");
+                buttonScenarios.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonScenarios");
 
                 tabPage1.Text = parserLauncher.GetSetting(defaultLanguage, "Page1");
-                //tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
                 tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
                 tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
+
+                if(parserLauncher.GetSetting("Default", "Admin") == "1")
+                {
+                    checkBox1.Checked = true;
+                }
+                else
+                {
+                    checkBox1.Checked = false;
+                }
             } 
         }
 
@@ -182,12 +191,30 @@ namespace launcher_imperivm_iii
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBox1.Checked)
+            {
+                parserLauncher.AddSetting("Default", "Admin", "1");
+            }
+            else
+            {
+                parserLauncher.AddSetting("Default", "Admin", "0");
+            }
+            parserLauncher.SaveSettings();
         }
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://www.fxgamestudio.com/");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Scenarios");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Adventures");
         }
     }
 }

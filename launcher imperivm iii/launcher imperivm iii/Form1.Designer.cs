@@ -31,30 +31,32 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonAdventures = new System.Windows.Forms.Button();
+            this.buttonScenarios = new System.Windows.Forms.Button();
             this.listMods = new System.Windows.Forms.CheckedListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveButton = new System.Windows.Forms.Button();
-            this.language = new System.Windows.Forms.ComboBox();
-            this.labelLanguage = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelLanguage = new System.Windows.Forms.Label();
+            this.language = new System.Windows.Forms.ComboBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +74,28 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Credits";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("NSimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(65, 195);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(284, 19);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Daniel Jerez (@d4nijerez)";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("NSimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(65, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 57);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Razor\r\nThe Master\r\nRicky96Highlander";
+            // 
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
@@ -88,7 +112,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("NSimSun", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Font = new System.Drawing.Font("NSimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(55, 72);
             this.linkLabel2.Name = "linkLabel2";
@@ -101,7 +125,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("NSimSun", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("NSimSun", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
             this.linkLabel1.Location = new System.Drawing.Point(55, 172);
             this.linkLabel1.Name = "linkLabel1";
@@ -113,6 +137,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonAdventures);
+            this.tabPage3.Controls.Add(this.buttonScenarios);
             this.tabPage3.Controls.Add(this.listMods);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -120,6 +146,32 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODs";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdventures
+            // 
+            this.buttonAdventures.BackColor = System.Drawing.Color.Black;
+            this.buttonAdventures.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdventures.ForeColor = System.Drawing.Color.White;
+            this.buttonAdventures.Location = new System.Drawing.Point(204, 264);
+            this.buttonAdventures.Name = "buttonAdventures";
+            this.buttonAdventures.Size = new System.Drawing.Size(85, 28);
+            this.buttonAdventures.TabIndex = 9;
+            this.buttonAdventures.Text = "Adventures";
+            this.buttonAdventures.UseVisualStyleBackColor = false;
+            this.buttonAdventures.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buttonScenarios
+            // 
+            this.buttonScenarios.BackColor = System.Drawing.Color.Black;
+            this.buttonScenarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonScenarios.ForeColor = System.Drawing.Color.White;
+            this.buttonScenarios.Location = new System.Drawing.Point(113, 264);
+            this.buttonScenarios.Name = "buttonScenarios";
+            this.buttonScenarios.Size = new System.Drawing.Size(85, 28);
+            this.buttonScenarios.TabIndex = 8;
+            this.buttonScenarios.Text = "Scenarios";
+            this.buttonScenarios.UseVisualStyleBackColor = false;
+            this.buttonScenarios.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // listMods
             // 
@@ -129,7 +181,7 @@
             this.listMods.FormattingEnabled = true;
             this.listMods.Location = new System.Drawing.Point(13, 14);
             this.listMods.Name = "listMods";
-            this.listMods.Size = new System.Drawing.Size(356, 274);
+            this.listMods.Size = new System.Drawing.Size(356, 244);
             this.listMods.TabIndex = 0;
             this.listMods.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listMods_ItemCheck);
             // 
@@ -145,23 +197,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(388, 326);
             this.tabControl1.TabIndex = 6;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.Logo_FX_fondo_transparente;
-            this.pictureBox2.Location = new System.Drawing.Point(309, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(65, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // tabPage1
             // 
@@ -181,6 +216,31 @@
             this.tabPage1.Size = new System.Drawing.Size(380, 300);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.Logo_FX_fondo_transparente;
+            this.pictureBox2.Location = new System.Drawing.Point(309, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(65, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Black;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(10, 246);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(59, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "admin";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -204,27 +264,6 @@
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // language
-            // 
-            this.language.FormattingEnabled = true;
-            this.language.Location = new System.Drawing.Point(154, 194);
-            this.language.Name = "language";
-            this.language.Size = new System.Drawing.Size(80, 21);
-            this.language.TabIndex = 3;
-            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
-            // 
-            // labelLanguage
-            // 
-            this.labelLanguage.AutoSize = true;
-            this.labelLanguage.BackColor = System.Drawing.Color.Black;
-            this.labelLanguage.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLanguage.ForeColor = System.Drawing.Color.White;
-            this.labelLanguage.Location = new System.Drawing.Point(155, 171);
-            this.labelLanguage.Name = "labelLanguage";
-            this.labelLanguage.Size = new System.Drawing.Size(76, 20);
-            this.labelLanguage.TabIndex = 4;
-            this.labelLanguage.Text = "Language";
-            // 
             // playButton
             // 
             this.playButton.BackColor = System.Drawing.Color.Black;
@@ -238,41 +277,32 @@
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // labelLanguage
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Black;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(10, 246);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "admin";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.BackColor = System.Drawing.Color.Black;
+            this.labelLanguage.Font = new System.Drawing.Font("Bodoni MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLanguage.ForeColor = System.Drawing.Color.White;
+            this.labelLanguage.Location = new System.Drawing.Point(155, 171);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(76, 20);
+            this.labelLanguage.TabIndex = 4;
+            this.labelLanguage.Text = "Language";
             // 
-            // label1
+            // language
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("NSimSun", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(65, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 57);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Razor\r\nThe Master\r\nRicky96Highlander";
+            this.language.FormattingEnabled = true;
+            this.language.Location = new System.Drawing.Point(154, 194);
+            this.language.Name = "language";
+            this.language.Size = new System.Drawing.Size(80, 21);
+            this.language.TabIndex = 3;
+            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
             // 
-            // label2
+            // imageList1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("NSimSun", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(65, 195);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(284, 19);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Daniel Jerez (@d4nijerez)";
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // label3
             // 
@@ -314,9 +344,9 @@
             this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,6 +374,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonAdventures;
+        private System.Windows.Forms.Button buttonScenarios;
     }
 }
 
