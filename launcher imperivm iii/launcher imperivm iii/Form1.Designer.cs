@@ -44,19 +44,26 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.playButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.buttonScenarios = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonConquest = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonProfiles = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonAdventures = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonPacks = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.resolution = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.playButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +71,7 @@
             // 
             this.language.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language.FormattingEnabled = true;
-            this.language.Location = new System.Drawing.Point(21, 191);
+            this.language.Location = new System.Drawing.Point(39, 313);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(86, 22);
             this.language.TabIndex = 3;
@@ -87,11 +94,11 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.playButton);
             this.tabPage1.Controls.Add(this.saveButton);
             this.tabPage1.Controls.Add(this.checkBox1);
-            this.tabPage1.Controls.Add(this.language);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -104,15 +111,14 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Depth = 0;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(110, 186);
+            this.checkBox1.Location = new System.Drawing.Point(37, 186);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBox1.MouseState = MaterialSkin.MouseState.HOVER;
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Ripple = true;
-            this.checkBox1.Size = new System.Drawing.Size(70, 30);
+            this.checkBox1.Size = new System.Drawing.Size(26, 30);
             this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Admin";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -144,12 +150,12 @@
             // listMods
             // 
             this.listMods.BackColor = System.Drawing.Color.DimGray;
-            this.listMods.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMods.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listMods.ForeColor = System.Drawing.Color.White;
             this.listMods.FormattingEnabled = true;
             this.listMods.Location = new System.Drawing.Point(6, 6);
             this.listMods.Name = "listMods";
-            this.listMods.Size = new System.Drawing.Size(383, 199);
+            this.listMods.Size = new System.Drawing.Size(383, 212);
             this.listMods.TabIndex = 12;
             // 
             // tabPage4
@@ -197,12 +203,12 @@
             this.version.Depth = 0;
             this.version.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.version.Location = new System.Drawing.Point(126, 314);
+            this.version.Location = new System.Drawing.Point(261, 314);
             this.version.MouseState = MaterialSkin.MouseState.HOVER;
             this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(161, 18);
+            this.version.Size = new System.Drawing.Size(140, 18);
             this.version.TabIndex = 19;
-            this.version.Text = "GBR Steam Beta v1.51";
+            this.version.Text = "GBR HD Beta v1.51";
             // 
             // materialLabel1
             // 
@@ -258,50 +264,6 @@
             this.materialLabel4.Size = new System.Drawing.Size(146, 18);
             this.materialLabel4.TabIndex = 18;
             this.materialLabel4.Text = "fxgamestudio.com";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 168);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
-            // playButton
-            // 
-            this.playButton.AutoSize = true;
-            this.playButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.playButton.Depth = 0;
-            this.playButton.Icon = global::launcher_imperivm_iii.Properties.Resources.run;
-            this.playButton.Location = new System.Drawing.Point(275, 181);
-            this.playButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.playButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.playButton.Name = "playButton";
-            this.playButton.Primary = false;
-            this.playButton.Size = new System.Drawing.Size(83, 36);
-            this.playButton.TabIndex = 16;
-            this.playButton.Text = "Play";
-            this.playButton.UseVisualStyleBackColor = true;
-            this.playButton.Click += new System.EventHandler(this.materialFlatButton1_Click_1);
-            // 
-            // saveButton
-            // 
-            this.saveButton.AutoSize = true;
-            this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveButton.Depth = 0;
-            this.saveButton.Icon = global::launcher_imperivm_iii.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(184, 182);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Primary = false;
-            this.saveButton.Size = new System.Drawing.Size(83, 36);
-            this.saveButton.TabIndex = 15;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
             // buttonScenarios
             // 
@@ -373,7 +335,7 @@
             this.buttonPacks.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonPacks.Depth = 0;
             this.buttonPacks.Icon = null;
-            this.buttonPacks.Location = new System.Drawing.Point(328, 165);
+            this.buttonPacks.Location = new System.Drawing.Point(329, 179);
             this.buttonPacks.MouseState = MaterialSkin.MouseState.HOVER;
             this.buttonPacks.Name = "buttonPacks";
             this.buttonPacks.Primary = true;
@@ -382,6 +344,89 @@
             this.buttonPacks.Text = "PAKs";
             this.buttonPacks.UseVisualStyleBackColor = true;
             // 
+            // resolution
+            // 
+            this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resolution.FormattingEnabled = true;
+            this.resolution.Location = new System.Drawing.Point(160, 313);
+            this.resolution.Name = "resolution";
+            this.resolution.Size = new System.Drawing.Size(86, 22);
+            this.resolution.TabIndex = 20;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::launcher_imperivm_iii.Properties.Resources.lan;
+            this.pictureBox4.Location = new System.Drawing.Point(16, 313);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::launcher_imperivm_iii.Properties.Resources.res;
+            this.pictureBox3.Location = new System.Drawing.Point(131, 314);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 187);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 168);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // playButton
+            // 
+            this.playButton.AutoSize = true;
+            this.playButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.playButton.Depth = 0;
+            this.playButton.Icon = global::launcher_imperivm_iii.Properties.Resources.run;
+            this.playButton.Location = new System.Drawing.Point(293, 182);
+            this.playButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.playButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.playButton.Name = "playButton";
+            this.playButton.Primary = false;
+            this.playButton.Size = new System.Drawing.Size(83, 36);
+            this.playButton.TabIndex = 16;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.materialFlatButton1_Click_1);
+            // 
+            // saveButton
+            // 
+            this.saveButton.AutoSize = true;
+            this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.saveButton.Depth = 0;
+            this.saveButton.Icon = global::launcher_imperivm_iii.Properties.Resources.save;
+            this.saveButton.Location = new System.Drawing.Point(67, 182);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Primary = false;
+            this.saveButton.Size = new System.Drawing.Size(83, 36);
+            this.saveButton.TabIndex = 15;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,9 +434,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(417, 341);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.resolution);
             this.Controls.Add(this.version);
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.language);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -408,6 +457,9 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -438,6 +490,10 @@
         private MaterialSkin.Controls.MaterialRaisedButton buttonProfiles;
         private MaterialSkin.Controls.MaterialRaisedButton buttonConquest;
         private MaterialSkin.Controls.MaterialRaisedButton buttonPacks;
+        private System.Windows.Forms.ComboBox resolution;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

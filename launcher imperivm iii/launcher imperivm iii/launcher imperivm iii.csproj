@@ -104,8 +104,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\lan.png" />
+    <None Include="Resources\res.png" />
+    <None Include="Resources\adm.png" />
     <None Include="Resources\logo1.png" />
-    <None Include="Resources\logo.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\run.png" />
   </ItemGroup>

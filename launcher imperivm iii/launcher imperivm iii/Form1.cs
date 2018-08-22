@@ -30,8 +30,9 @@ namespace launcher_imperivm_iii
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
 
+
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey700, Primary.Grey700, Primary.Grey700, Accent.Amber100, TextShade.BLACK);
+                Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.BLACK);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,14 +76,14 @@ namespace launcher_imperivm_iii
 
             String resolutionDefault = (parser.GetSetting("Options", "Resolution"));
 
-            /*resolution.Items.Add("1024 x 768");
+            resolution.Items.Add("1024 x 768");
             resolution.Items.Add("1152 x 864");
             resolution.Items.Add("1280 x 1024");
             resolution.Items.Add("1280 x 720");
             resolution.Items.Add("1366 x 768");
-            resolution.Items.Add("1920 x 1080");*/
+            resolution.Items.Add("1920 x 1080");
 
-            //resolution.SelectedIndex = int.Parse(resolutionDefault);
+            resolution.SelectedIndex = int.Parse(resolutionDefault);
 
             loadLanguageLauncher();
 
@@ -183,16 +184,6 @@ namespace launcher_imperivm_iii
         {
             changeLanguageResolution();
             parserLauncher.SaveSettings();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("www.imperivm-world.forumcommunity.net");
-        }
-
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://www.haemimontgames.com");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
