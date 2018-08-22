@@ -9,21 +9,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MaterialSkin.Animations;
+using MaterialSkin.Controls;
+using MaterialSkin;
 namespace launcher_imperivm_iii
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MaterialForm
     {
 
 
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
-      
+
+        
+
         public Form1()
         {
             InitializeComponent();
-            this.tabControl1.TabPages[0].BackColor = Color.Transparent;
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
 
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Grey700, Primary.Grey700, Primary.Grey700, Accent.Amber100, TextShade.BLACK);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,7 +117,7 @@ namespace launcher_imperivm_iii
 
                 String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
 
-                labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
+                //labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
                 playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
                 saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
                 buttonAdventures.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonAdventures");
@@ -233,6 +241,117 @@ namespace launcher_imperivm_iii
         private void buttonPacks_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", @"Packs"); 
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            changeLanguageResolution();
+            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+            if (checkBox1.Checked)
+            {
+                processStartInfo.Verb = "runas";
+            }
+            processStartInfo.FileName = @"gbr.exe";
+            System.Diagnostics.Process.Start(processStartInfo);
+            //Process.Start(@"gbr.exe");
+
+            Application.Exit();
+        }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            changeLanguageResolution();
+            parserLauncher.SaveSettings();
+        }
+
+        private void materialFlatButton1_Click_1(object sender, EventArgs e)
+        {
+            changeLanguageResolution();
+            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+            if (checkBox1.Checked)
+            {
+                processStartInfo.Verb = "runas";
+            }
+            processStartInfo.FileName = @"gbr.exe";
+            System.Diagnostics.Process.Start(processStartInfo);
+            //Process.Start(@"gbr.exe");
+
+            Application.Exit();
+        }
+
+        private void materialLabel1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialTabSelector1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonScenarios_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAdventures_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonConquest_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonScenarios_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAdventures_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonProfiles_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonPacks_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
