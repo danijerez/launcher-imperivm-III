@@ -44,10 +44,6 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.buttonScenarios = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonConquest = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonProfiles = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.buttonAdventures = new MaterialSkin.Controls.MaterialRaisedButton();
             this.buttonPacks = new MaterialSkin.Controls.MaterialRaisedButton();
             this.resolution = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -56,6 +52,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.buttonScenarios = new System.Windows.Forms.Button();
+            this.buttonConquest = new System.Windows.Forms.Button();
+            this.buttonAdventures = new System.Windows.Forms.Button();
+            this.buttonProfiles = new System.Windows.Forms.Button();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -123,8 +123,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.buttonAdventures);
             this.tabPage2.Controls.Add(this.buttonProfiles);
+            this.tabPage2.Controls.Add(this.buttonAdventures);
             this.tabPage2.Controls.Add(this.buttonConquest);
             this.tabPage2.Controls.Add(this.buttonScenarios);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -265,70 +265,6 @@
             this.materialLabel4.TabIndex = 18;
             this.materialLabel4.Text = "fxgamestudio.com";
             // 
-            // buttonScenarios
-            // 
-            this.buttonScenarios.AutoSize = true;
-            this.buttonScenarios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonScenarios.Depth = 0;
-            this.buttonScenarios.Icon = null;
-            this.buttonScenarios.Location = new System.Drawing.Point(19, 61);
-            this.buttonScenarios.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonScenarios.Name = "buttonScenarios";
-            this.buttonScenarios.Primary = true;
-            this.buttonScenarios.Size = new System.Drawing.Size(103, 36);
-            this.buttonScenarios.TabIndex = 18;
-            this.buttonScenarios.Text = "ESCENARIOS";
-            this.buttonScenarios.UseVisualStyleBackColor = true;
-            this.buttonScenarios.Click += new System.EventHandler(this.buttonScenarios_Click_2);
-            // 
-            // buttonConquest
-            // 
-            this.buttonConquest.AutoSize = true;
-            this.buttonConquest.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonConquest.Depth = 0;
-            this.buttonConquest.Icon = null;
-            this.buttonConquest.Location = new System.Drawing.Point(19, 103);
-            this.buttonConquest.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonConquest.Name = "buttonConquest";
-            this.buttonConquest.Primary = true;
-            this.buttonConquest.Size = new System.Drawing.Size(92, 36);
-            this.buttonConquest.TabIndex = 19;
-            this.buttonConquest.Text = "CONQUEST";
-            this.buttonConquest.UseVisualStyleBackColor = true;
-            this.buttonConquest.Click += new System.EventHandler(this.buttonConquest_Click_1);
-            // 
-            // buttonProfiles
-            // 
-            this.buttonProfiles.AutoSize = true;
-            this.buttonProfiles.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonProfiles.Depth = 0;
-            this.buttonProfiles.Icon = null;
-            this.buttonProfiles.Location = new System.Drawing.Point(220, 103);
-            this.buttonProfiles.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonProfiles.Name = "buttonProfiles";
-            this.buttonProfiles.Primary = true;
-            this.buttonProfiles.Size = new System.Drawing.Size(81, 36);
-            this.buttonProfiles.TabIndex = 20;
-            this.buttonProfiles.Text = "PERFILES";
-            this.buttonProfiles.UseVisualStyleBackColor = true;
-            this.buttonProfiles.Click += new System.EventHandler(this.buttonProfiles_Click_1);
-            // 
-            // buttonAdventures
-            // 
-            this.buttonAdventures.AutoSize = true;
-            this.buttonAdventures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdventures.Depth = 0;
-            this.buttonAdventures.Icon = null;
-            this.buttonAdventures.Location = new System.Drawing.Point(220, 61);
-            this.buttonAdventures.MouseState = MaterialSkin.MouseState.HOVER;
-            this.buttonAdventures.Name = "buttonAdventures";
-            this.buttonAdventures.Primary = true;
-            this.buttonAdventures.Size = new System.Drawing.Size(107, 36);
-            this.buttonAdventures.TabIndex = 21;
-            this.buttonAdventures.Text = "ADVENTURES";
-            this.buttonAdventures.UseVisualStyleBackColor = true;
-            this.buttonAdventures.Click += new System.EventHandler(this.buttonAdventures_Click_2);
-            // 
             // buttonPacks
             // 
             this.buttonPacks.AutoSize = true;
@@ -427,6 +363,55 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
             // 
+            // buttonScenarios
+            // 
+            this.buttonScenarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonScenarios.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonScenarios.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonScenarios.Location = new System.Drawing.Point(55, 41);
+            this.buttonScenarios.Name = "buttonScenarios";
+            this.buttonScenarios.Size = new System.Drawing.Size(114, 51);
+            this.buttonScenarios.TabIndex = 22;
+            this.buttonScenarios.Text = "buttonScenarios";
+            this.buttonScenarios.UseVisualStyleBackColor = true;
+            this.buttonScenarios.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonConquest
+            // 
+            this.buttonConquest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConquest.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.buttonConquest.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonConquest.Location = new System.Drawing.Point(55, 114);
+            this.buttonConquest.Name = "buttonConquest";
+            this.buttonConquest.Size = new System.Drawing.Size(114, 51);
+            this.buttonConquest.TabIndex = 23;
+            this.buttonConquest.Text = "button2";
+            this.buttonConquest.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdventures
+            // 
+            this.buttonAdventures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdventures.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.buttonAdventures.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonAdventures.Location = new System.Drawing.Point(248, 41);
+            this.buttonAdventures.Name = "buttonAdventures";
+            this.buttonAdventures.Size = new System.Drawing.Size(116, 51);
+            this.buttonAdventures.TabIndex = 24;
+            this.buttonAdventures.Text = "button3";
+            this.buttonAdventures.UseVisualStyleBackColor = true;
+            // 
+            // buttonProfiles
+            // 
+            this.buttonProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonProfiles.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.buttonProfiles.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonProfiles.Location = new System.Drawing.Point(248, 114);
+            this.buttonProfiles.Name = "buttonProfiles";
+            this.buttonProfiles.Size = new System.Drawing.Size(116, 51);
+            this.buttonProfiles.TabIndex = 25;
+            this.buttonProfiles.Text = "button4";
+            this.buttonProfiles.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,7 +437,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -485,15 +469,15 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonScenarios;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonAdventures;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonProfiles;
-        private MaterialSkin.Controls.MaterialRaisedButton buttonConquest;
         private MaterialSkin.Controls.MaterialRaisedButton buttonPacks;
         private System.Windows.Forms.ComboBox resolution;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button buttonScenarios;
+        private System.Windows.Forms.Button buttonProfiles;
+        private System.Windows.Forms.Button buttonAdventures;
+        private System.Windows.Forms.Button buttonConquest;
     }
 }
 

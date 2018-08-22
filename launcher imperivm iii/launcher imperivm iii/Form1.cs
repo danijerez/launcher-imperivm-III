@@ -25,6 +25,10 @@ namespace launcher_imperivm_iii
 
         public Form1()
         {
+
+            
+
+
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -88,6 +92,7 @@ namespace launcher_imperivm_iii
             loadLanguageLauncher();
 
             loadFolderMods();
+
 
         }
 
@@ -341,6 +346,11 @@ namespace launcher_imperivm_iii
         }
 
         private void buttonPacks_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }
