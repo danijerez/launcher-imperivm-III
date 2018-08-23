@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Media;
+
 namespace launcher_imperivm_iii
 {
     public partial class Form1 : MaterialForm
@@ -20,8 +22,10 @@ namespace launcher_imperivm_iii
 
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
+        SoundPlayer simpleSound;
+        bool isSoundPlay = true;
 
-        
+
 
         public Form1()
         {
@@ -36,7 +40,7 @@ namespace launcher_imperivm_iii
 
 
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.BLACK);
+                Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,6 +70,9 @@ namespace launcher_imperivm_iii
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            simpleSound = new SoundPlayer(@"Music/launcher.wav");
+            simpleSound.Play();
 
             var pakLanguages = new DirectoryInfo("local").GetFiles("*.pak");
             for(int i = 0; i < pakLanguages.Length; i++)
@@ -280,79 +287,19 @@ namespace launcher_imperivm_iii
             Application.Exit();
         }
 
-        private void materialLabel1_Click_1(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialTabSelector1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialLabel1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonScenarios_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAdventures_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonConquest_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonScenarios_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAdventures_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonProfiles_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonPacks_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
+            if (isSoundPlay)
+            {
+                isSoundPlay = false;
+                simpleSound.Stop();
+            }
+            else
+            {
+                simpleSound.Play();
+                isSoundPlay = true;
+            }
+            
         }
     }
 }
