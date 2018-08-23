@@ -104,6 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\carpeta.png" />
+    <None Include="Resources\Logo_haemimont.svg.png" />
     <None Include="Resources\discord1.png" />
     <None Include="Resources\discord.png" />
     <None Include="Resources\logo-de-aplicacion-de-facebook.png" />

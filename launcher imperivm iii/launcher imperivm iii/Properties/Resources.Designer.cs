@@ -83,6 +83,16 @@ namespace launcher_imperivm_iii.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carpeta {
+            get {
+                object obj = ResourceManager.GetObject("carpeta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap casco_romano {
             get {
                 object obj = ResourceManager.GetObject("casco-romano", resourceCulture);
@@ -206,6 +216,16 @@ namespace launcher_imperivm_iii.Properties {
         internal static System.Drawing.Bitmap Logo_FX_fondo_transparente {
             get {
                 object obj = ResourceManager.GetObject("Logo-FX-fondo-transparente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_haemimont_svg {
+            get {
+                object obj = ResourceManager.GetObject("Logo_haemimont.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

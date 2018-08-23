@@ -13,6 +13,7 @@ using MaterialSkin.Animations;
 using MaterialSkin.Controls;
 using MaterialSkin;
 using System.Media;
+using System.Drawing.Imaging;
 
 namespace launcher_imperivm_iii
 {
@@ -22,6 +23,8 @@ namespace launcher_imperivm_iii
 
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
+        IniParser parserConst = new IniParser(@"DATA/CONST.INI");        
+
         SoundPlayer simpleSound;
         bool isSoundPlay = true;
 
@@ -46,33 +49,46 @@ namespace launcher_imperivm_iii
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-            changeLanguageResolution();
-            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
-            if (checkBox1.Checked)
-            {
-                processStartInfo.Verb = "runas";
-            }
-            processStartInfo.FileName = @"gbr.exe";
-            System.Diagnostics.Process.Start(processStartInfo);
-            //Process.Start(@"gbr.exe");
-
-            Application.Exit();
-
         }
 
         private void changeLanguageResolution()
         {
+            
             parserSettings.AddSetting("Language", "Default", language.Text);
             //parserSettings.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
+            try
+            {
+
+                String x = resolution.SelectedText.Split('x')[0];
+                String y = resolution.SelectedText.Split('x')[1];
+                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", int.Parse(x), int.Parse(y));
+
+                parserConst.AddSetting("Resolutions", "Res1_x", x);
+                parserConst.AddSetting("Resolutions", "Res1_y", y);
+                lineChanger("Larghezza = "+x, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 2);
+                lineChanger("Altezza = "+y, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 3);
+
+
+            }
+            catch
+            {
+                parserConst.AddSetting("Resolutions", "Res1_x", "1920");
+                parserConst.AddSetting("Resolutions", "Res1_y", "1080");
+                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", 1920, 1080);
+
+                lineChanger("Larghezza = 1920", @"DATA/INTERFACE/MENU/TEMPLATE.INI", 2);
+                lineChanger("Altezza = 1080" , @"DATA/INTERFACE/MENU/TEMPLATE.INI", 3);
+            }
+
+            parserConst.SaveSettings();
             parserSettings.SaveSettings();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
-            simpleSound.Play();
+            simpleSound.PlayLooping();
 
             var pakLanguages = new DirectoryInfo("local").GetFiles("*.pak");
             for(int i = 0; i < pakLanguages.Length; i++)
@@ -87,14 +103,16 @@ namespace launcher_imperivm_iii
 
             String resolutionDefault = (parser.GetSetting("Options", "Resolution"));
 
-            resolution.Items.Add("1024 x 768");
-            resolution.Items.Add("1152 x 864");
-            resolution.Items.Add("1280 x 1024");
-            resolution.Items.Add("1280 x 720");
-            resolution.Items.Add("1366 x 768");
-            resolution.Items.Add("1920 x 1080");
+            resolution.Items.Add("1024x768");
+            resolution.Items.Add("1152x864");
+            resolution.Items.Add("1280x1024");
+            resolution.Items.Add("1280x720");
+            resolution.Items.Add("1440x900");
+            resolution.Items.Add("1366x768");
+            resolution.Items.Add("1680x1050");
+            resolution.Items.Add("1920x1080");
 
-            resolution.SelectedIndex = int.Parse(resolutionDefault);
+            resolution.SelectedIndex = 7;
 
             loadLanguageLauncher();
 
@@ -131,8 +149,8 @@ namespace launcher_imperivm_iii
                 String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
 
                 //labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
-                playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
-                saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
+                //playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
+                //saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
                 buttonAdventures.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonAdventures");
                 buttonScenarios.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonScenarios");
                 buttonProfiles.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonProfiles");
@@ -248,21 +266,6 @@ namespace launcher_imperivm_iii
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            changeLanguageResolution();
-            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
-            if (checkBox1.Checked)
-            {
-                processStartInfo.Verb = "runas";
-            }
-            processStartInfo.FileName = @"gbr.exe";
-            System.Diagnostics.Process.Start(processStartInfo);
-            //Process.Start(@"gbr.exe");
-
-            Application.Exit();
-        }
-
-        private void materialLabel1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -296,10 +299,121 @@ namespace launcher_imperivm_iii
             }
             else
             {
-                simpleSound.Play();
+                simpleSound.PlayLooping();
                 isSoundPlay = true;
             }
             
         }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", @"Packs");
+        }
+
+        public static Bitmap AdjustBrightness(Bitmap Image, int Value)
+        {
+            System.Drawing.Bitmap TempBitmap = Image;
+            float FinalValue = (float)Value / 255.0f;
+            System.Drawing.Bitmap NewBitmap = new System.Drawing.Bitmap(TempBitmap.Width, TempBitmap.Height);
+            System.Drawing.Graphics NewGraphics = System.Drawing.Graphics.FromImage(NewBitmap);
+            float[][] FloatColorMatrix ={
+                      new float[] {1, 0, 0, 0, 0},
+                      new float[] {0, 1, 0, 0, 0},
+                      new float[] {0, 0, 1, 0, 0},
+                      new float[] {0, 0, 0, 1, 0},
+                      new float[] {FinalValue, FinalValue, FinalValue, 1, 1}
+                 };
+
+            System.Drawing.Imaging.ColorMatrix NewColorMatrix = new System.Drawing.Imaging.ColorMatrix(FloatColorMatrix);
+            System.Drawing.Imaging.ImageAttributes Attributes = new System.Drawing.Imaging.ImageAttributes();
+            Attributes.SetColorMatrix(NewColorMatrix);
+            NewGraphics.DrawImage(TempBitmap, new System.Drawing.Rectangle(0, 0, TempBitmap.Width, TempBitmap.Height), 0, 0, TempBitmap.Width, TempBitmap.Height, System.Drawing.GraphicsUnit.Pixel, Attributes);
+            Attributes.Dispose();
+            NewGraphics.Dispose();
+            return NewBitmap;
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            Bitmap img = launcher_imperivm_iii.Properties.Resources.logo1;
+            img.MakeTransparent(img.GetPixel(0, 0));
+            pictureBox1.Image = AdjustBrightness(img, 50);
+            pictureBox1.BackColor = Color.Transparent;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            Bitmap img = launcher_imperivm_iii.Properties.Resources.logo1;
+            img.MakeTransparent(img.GetPixel(0, 0));
+            pictureBox1.Image = img;
+            pictureBox1.BackColor = Color.Transparent;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            changeLanguageResolution();
+            
+            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+            if (checkBox1.Checked)
+            {
+                processStartInfo.Verb = "runas";
+            }
+            processStartInfo.FileName = @"gbr.exe";
+            System.Diagnostics.Process.Start(processStartInfo);
+            //Process.Start(@"gbr.exe");
+
+            Application.Exit();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/RErjBq8");
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/Imperivm3/");
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/fabiomarigo7/imperivm-steam");
+        }
+
+        public void ResizeImage(string input,string output, int width, int height)
+        {
+            using (var image = Image.FromFile(input))
+            using (var newImage = ScaleImage(image, width, height))
+            {
+                newImage.Save(output, ImageFormat.Bmp);
+            }
+        }
+
+        public static Image ScaleImage(Image image, int width, int height)
+        {
+            Size newSize = new Size(width, height);
+            Image newImage = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+
+            using (Graphics GFX = Graphics.FromImage((Bitmap)newImage))
+            {
+                GFX.DrawImage(image,new Rectangle(Point.Empty, newSize));
+            }
+                return newImage;
+        }
+
+
+        static void lineChanger(string newText, string fileName, int line_to_edit)
+        {
+            string[] arrLine = File.ReadAllLines(fileName);
+            arrLine[line_to_edit - 1] = newText;
+            File.WriteAllLines(fileName, arrLine);
+        }
+
+
     }
 }

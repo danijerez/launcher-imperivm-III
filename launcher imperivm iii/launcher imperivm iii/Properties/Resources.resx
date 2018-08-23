@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Logo_haemimont.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_haemimont.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="global2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\global2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,6 +154,9 @@
   <data name="bandera-en-un-planeta-bajo-las-estrellas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bandera-en-un-planeta-bajo-las-estrellas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="discord1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\discord1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,7 +184,7 @@
   <data name="res" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\res.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="discord1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\discord1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carpeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carpeta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
