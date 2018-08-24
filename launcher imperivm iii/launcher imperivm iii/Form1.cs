@@ -14,6 +14,7 @@ using MaterialSkin.Controls;
 using MaterialSkin;
 using System.Media;
 using System.Drawing.Imaging;
+using System.Collections;
 
 namespace launcher_imperivm_iii
 {
@@ -59,12 +60,13 @@ namespace launcher_imperivm_iii
             try
             {
 
-                String x = resolution.SelectedText.Split('x')[0];
-                String y = resolution.SelectedText.Split('x')[1];
-                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", int.Parse(x), int.Parse(y));
+                int x = int.Parse(resolution.SelectedText.Split('x')[0]);
+                int y = int.Parse(resolution.SelectedText.Split('x')[1]);
 
-                parserConst.AddSetting("Resolutions", "Res1_x", x);
-                parserConst.AddSetting("Resolutions", "Res1_y", y);
+                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", x, y);
+
+                parserConst.AddSetting("Resolutions", "Res1_x", x.ToString());
+                parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
                 lineChanger("Larghezza = "+x, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 2);
                 lineChanger("Altezza = "+y, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 3);
 
@@ -100,25 +102,32 @@ namespace launcher_imperivm_iii
             String languageDefault = (parser.GetSetting("Language", "Default")).ToUpper();
 
             language.SelectedIndex = language.FindStringExact(languageDefault);
-
+            language.DropDownStyle = ComboBoxStyle.DropDownList;
             String resolutionDefault = (parser.GetSetting("Options", "Resolution"));
 
-            resolution.Items.Add("1024x768");
-            resolution.Items.Add("1152x864");
-            resolution.Items.Add("1280x1024");
-            resolution.Items.Add("1280x720");
-            resolution.Items.Add("1440x900");
-            resolution.Items.Add("1366x768");
-            resolution.Items.Add("1680x1050");
-            resolution.Items.Add("1920x1080");
-
-            resolution.SelectedIndex = 7;
+            listResolution();
 
             loadLanguageLauncher();
 
             loadFolderMods();
 
+            this.Refresh();
+        }
 
+        public void listResolution()
+        {
+            ArrayList list = readLines(@"resolutions.txt");
+            foreach (string i in list)
+            {
+                if (!i.Equals("\n")&& !i.Equals(""))
+                {
+                    resolution.Items.Add(i);
+                }
+                
+            }
+
+            resolution.SelectedIndex = int.Parse(parserLauncher.GetSetting("Default", "Resolution"));
+            resolution.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
 
@@ -194,6 +203,7 @@ namespace launcher_imperivm_iii
         private void language_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadLanguageLauncher();
+            this.Refresh();
         }
 
         private void listMods_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -365,11 +375,6 @@ namespace launcher_imperivm_iii
             Application.Exit();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox10_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://discord.gg/RErjBq8");
@@ -414,6 +419,73 @@ namespace launcher_imperivm_iii
             File.WriteAllLines(fileName, arrLine);
         }
 
+        static ArrayList readLines(string fileName)
+        {
+            ArrayList list = new ArrayList();
+            int counter = 0;
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader(fileName);
+            while ((line = file.ReadLine()) != null)
+            {
+                list.Add(line);
+                counter++;
+            }
+            file.Close();
+            return list;
+        }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+            if (!resX.Text.Equals("")&& !resY.Text.Equals(""))
+            {
+                File.AppendAllText("resolutions.txt", "\n" + resX.Text + "x" + resY.Text);
+                resolution.Items.Clear();
+                listResolution();
+            }
+            
+        }
+
+        private void resX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void resY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void pictureBox18_Click(object sender, EventArgs e)
+        {
+            if (!resX.Text.Equals("") && !resY.Text.Equals(""))
+            {
+                string searchFor = resX.Text + "x" + resY.Text;
+                string[] lines = File.ReadAllLines("resolutions.txt");
+                List<String> newLines = new List<String>();
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (!lines[i].Equals(searchFor) && !lines[i].Equals("") && !lines[i].Equals("\n"))
+                    {
+                        //lineChanger("", "resolutions.txt", i);
+                        newLines.Add(lines[i]); 
+                    }
+                }
+                resolution.Items.Clear();
+
+                string[] endLinesArray = new string[newLines.Count];
+                for (int i = 0; i < newLines.Count; i++)
+                {
+                    endLinesArray[i] = newLines[i];
+                }
+                    
+                File.WriteAllLines("resolutions.txt", endLinesArray);
+                listResolution();
+            }
+        }
     }
 }
