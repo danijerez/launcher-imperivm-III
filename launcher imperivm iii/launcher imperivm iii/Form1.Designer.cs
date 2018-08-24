@@ -179,11 +179,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(118, 153);
+            this.label6.Location = new System.Drawing.Point(90, 153);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 21);
+            this.label6.Size = new System.Drawing.Size(230, 21);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Add custom resolution";
+            this.label6.Text = "Add/Remove custom resolution";
             // 
             // label5
             // 
@@ -219,6 +219,8 @@
             // 
             // buttonProfiles
             // 
+            this.buttonProfiles.BackColor = System.Drawing.Color.DimGray;
+            this.buttonProfiles.FlatAppearance.BorderSize = 0;
             this.buttonProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfiles.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonProfiles.ForeColor = System.Drawing.Color.White;
@@ -227,11 +229,13 @@
             this.buttonProfiles.Size = new System.Drawing.Size(116, 51);
             this.buttonProfiles.TabIndex = 25;
             this.buttonProfiles.Text = "button4";
-            this.buttonProfiles.UseVisualStyleBackColor = true;
+            this.buttonProfiles.UseVisualStyleBackColor = false;
             this.buttonProfiles.Click += new System.EventHandler(this.buttonProfiles_Click);
             // 
             // buttonAdventures
             // 
+            this.buttonAdventures.BackColor = System.Drawing.Color.DimGray;
+            this.buttonAdventures.FlatAppearance.BorderSize = 0;
             this.buttonAdventures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdventures.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonAdventures.ForeColor = System.Drawing.Color.White;
@@ -240,11 +244,13 @@
             this.buttonAdventures.Size = new System.Drawing.Size(116, 51);
             this.buttonAdventures.TabIndex = 24;
             this.buttonAdventures.Text = "button3";
-            this.buttonAdventures.UseVisualStyleBackColor = true;
+            this.buttonAdventures.UseVisualStyleBackColor = false;
             this.buttonAdventures.Click += new System.EventHandler(this.buttonAdventures_Click);
             // 
             // buttonConquest
             // 
+            this.buttonConquest.BackColor = System.Drawing.Color.DimGray;
+            this.buttonConquest.FlatAppearance.BorderSize = 0;
             this.buttonConquest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConquest.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonConquest.ForeColor = System.Drawing.Color.White;
@@ -253,11 +259,13 @@
             this.buttonConquest.Size = new System.Drawing.Size(114, 51);
             this.buttonConquest.TabIndex = 23;
             this.buttonConquest.Text = "button2";
-            this.buttonConquest.UseVisualStyleBackColor = true;
+            this.buttonConquest.UseVisualStyleBackColor = false;
             this.buttonConquest.Click += new System.EventHandler(this.buttonConquest_Click);
             // 
             // buttonScenarios
             // 
+            this.buttonScenarios.BackColor = System.Drawing.Color.DimGray;
+            this.buttonScenarios.FlatAppearance.BorderSize = 0;
             this.buttonScenarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonScenarios.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonScenarios.ForeColor = System.Drawing.Color.White;
@@ -266,7 +274,7 @@
             this.buttonScenarios.Size = new System.Drawing.Size(114, 51);
             this.buttonScenarios.TabIndex = 22;
             this.buttonScenarios.Text = "buttonScenarios";
-            this.buttonScenarios.UseVisualStyleBackColor = true;
+            this.buttonScenarios.UseVisualStyleBackColor = false;
             this.buttonScenarios.Click += new System.EventHandler(this.buttonScenarios_Click);
             // 
             // tabPage3
@@ -320,6 +328,7 @@
             this.label4.Size = new System.Drawing.Size(157, 16);
             this.label4.TabIndex = 35;
             this.label4.Text = "Daniel Jerez \"@d4nijerez\"";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 

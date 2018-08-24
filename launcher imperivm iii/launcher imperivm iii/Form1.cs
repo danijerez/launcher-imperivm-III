@@ -24,7 +24,11 @@ namespace launcher_imperivm_iii
 
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
-        IniParser parserConst = new IniParser(@"DATA/CONST.INI");        
+        IniParser parserConst = new IniParser(@"DATA/CONST.INI");
+        String pathTextResolutions = "Resolutions.txt";
+        String pathTemplate = @"DATA/INTERFACE/MENU/TEMPLATE.INI";
+        String pathBackground = @"CURRENTLANG/MENUBACKGROUND.BMP";
+        String pathImage16_9 = @"CURRENTLANG/menu_16_9.BMP";
 
         SoundPlayer simpleSound;
         bool isSoundPlay = true;
@@ -63,12 +67,12 @@ namespace launcher_imperivm_iii
                 int x = int.Parse(resolution.SelectedText.Split('x')[0]);
                 int y = int.Parse(resolution.SelectedText.Split('x')[1]);
 
-                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", x, y);
+                ResizeImage(pathImage16_9, pathBackground, x, y);
 
                 parserConst.AddSetting("Resolutions", "Res1_x", x.ToString());
                 parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
-                lineChanger("Larghezza = "+x, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 2);
-                lineChanger("Altezza = "+y, @"DATA/INTERFACE/MENU/TEMPLATE.INI", 3);
+                lineChanger("Larghezza = "+x, pathTemplate, 2);
+                lineChanger("Altezza = "+y, pathTemplate, 3);
 
 
             }
@@ -76,10 +80,10 @@ namespace launcher_imperivm_iii
             {
                 parserConst.AddSetting("Resolutions", "Res1_x", "1920");
                 parserConst.AddSetting("Resolutions", "Res1_y", "1080");
-                ResizeImage(@"CURRENTLANG/menu_16_9.BMP", @"CURRENTLANG/MENUBACKGROUND.BMP", 1920, 1080);
+                ResizeImage(pathImage16_9, pathBackground, 1920, 1080);
 
-                lineChanger("Larghezza = 1920", @"DATA/INTERFACE/MENU/TEMPLATE.INI", 2);
-                lineChanger("Altezza = 1080" , @"DATA/INTERFACE/MENU/TEMPLATE.INI", 3);
+                lineChanger("Larghezza = 1920", pathTemplate, 2);
+                lineChanger("Altezza = 1080" , pathTemplate, 3);
             }
 
             parserConst.SaveSettings();
@@ -116,7 +120,7 @@ namespace launcher_imperivm_iii
 
         public void listResolution()
         {
-            ArrayList list = readLines(@"resolutions.txt");
+            ArrayList list = readLines(pathTextResolutions);
             foreach (string i in list)
             {
                 if (!i.Equals("\n")&& !i.Equals(""))
@@ -139,11 +143,6 @@ namespace launcher_imperivm_iii
                 case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
                 default: return input.First().ToString().ToUpper() + input.Substring(1);
             }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("mailto:daniel.jerez@fxgamestudio.com");
         }
 
         private void loadLanguageLauncher()
@@ -443,7 +442,7 @@ namespace launcher_imperivm_iii
         {
             if (!resX.Text.Equals("")&& !resY.Text.Equals(""))
             {
-                File.AppendAllText("resolutions.txt", "\n" + resX.Text + "x" + resY.Text);
+                File.AppendAllText(pathTextResolutions, "\n" + resX.Text + "x" + resY.Text);
                 resolution.Items.Clear();
                 listResolution();
             }
@@ -465,7 +464,7 @@ namespace launcher_imperivm_iii
             if (!resX.Text.Equals("") && !resY.Text.Equals(""))
             {
                 string searchFor = resX.Text + "x" + resY.Text;
-                string[] lines = File.ReadAllLines("resolutions.txt");
+                string[] lines = File.ReadAllLines(pathTextResolutions);
                 List<String> newLines = new List<String>();
                 for (int i = 0; i < lines.Length; i++)
                 {
@@ -483,9 +482,14 @@ namespace launcher_imperivm_iii
                     endLinesArray[i] = newLines[i];
                 }
                     
-                File.WriteAllLines("resolutions.txt", endLinesArray);
+                File.WriteAllLines(pathTextResolutions, endLinesArray);
                 listResolution();
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/d4nijerez");
         }
     }
 }
