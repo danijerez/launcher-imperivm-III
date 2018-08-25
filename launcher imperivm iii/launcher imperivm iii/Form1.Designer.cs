@@ -155,19 +155,19 @@
             this.tabPage2.BackColor = System.Drawing.Color.Black;
             this.tabPage2.Controls.Add(this.pictureBox18);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.pictureBox17);
-            this.tabPage2.Controls.Add(this.pictureBox16);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.resY);
             this.tabPage2.Controls.Add(this.resX);
-            this.tabPage2.Controls.Add(this.pictureBox9);
-            this.tabPage2.Controls.Add(this.pictureBox8);
-            this.tabPage2.Controls.Add(this.pictureBox7);
-            this.tabPage2.Controls.Add(this.pictureBox6);
             this.tabPage2.Controls.Add(this.buttonProfiles);
             this.tabPage2.Controls.Add(this.buttonAdventures);
             this.tabPage2.Controls.Add(this.buttonConquest);
             this.tabPage2.Controls.Add(this.buttonScenarios);
+            this.tabPage2.Controls.Add(this.pictureBox17);
+            this.tabPage2.Controls.Add(this.pictureBox16);
+            this.tabPage2.Controls.Add(this.pictureBox9);
+            this.tabPage2.Controls.Add(this.pictureBox8);
+            this.tabPage2.Controls.Add(this.pictureBox7);
+            this.tabPage2.Controls.Add(this.pictureBox6);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -583,7 +583,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::launcher_imperivm_iii.Properties.Resources.lan;
-            this.pictureBox4.Location = new System.Drawing.Point(16, 313);
+            this.pictureBox4.Location = new System.Drawing.Point(14, 313);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -21,7 +21,6 @@ namespace launcher_imperivm_iii
     public partial class Form1 : MaterialForm
     {
 
-
         IniParser parserSettings = new IniParser(@"Settings.ini");
         IniParser parserLauncher = new IniParser(@"Launcher.ini");
         IniParser parserConst = new IniParser(@"DATA/CONST.INI");
@@ -29,24 +28,16 @@ namespace launcher_imperivm_iii
         String pathTemplate = @"DATA/INTERFACE/MENU/TEMPLATE.INI";
         String pathBackground = @"CURRENTLANG/MENUBACKGROUND.BMP";
         String pathImage16_9 = @"CURRENTLANG/menu_16_9.BMP";
-
+        String pathImage4_3 = @"CURRENTLANG/menu_4_3.BMP";
         SoundPlayer simpleSound;
         bool isSoundPlay = true;
 
-
-
         public Form1()
         {
-
-            
-
-
             InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-
-
             materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
@@ -58,19 +49,32 @@ namespace launcher_imperivm_iii
 
         private void changeLanguageResolution()
         {
-            
+
             parserSettings.AddSetting("Language", "Default", language.Text);
             parserLauncher.AddSetting("Default", "Resolution", resolution.SelectedIndex.ToString());
 
-                int x = int.Parse(resolution.Text.Split('x')[0]);
-                int y = int.Parse(resolution.Text.Split('x')[1]);
+            int x = int.Parse(resolution.Text.Split('x')[0]);
+            int y = int.Parse(resolution.Text.Split('x')[1]);
 
+            Decimal is_16_9 = Decimal.Divide(x, y) - Decimal.Divide(16, 9);
+            Decimal is_4_3 = Decimal.Divide(x, y) - Decimal.Divide(4, 3);
+
+            if (is_4_3 == 0)
+            {
+                Console.WriteLine(is_4_3 + " 4:3 [" + x + "," + y + "]");
+                ResizeImage(pathImage4_3, pathBackground, x, y);
+            }
+            else
+            {
+                Console.WriteLine(is_16_9 + " 16:9 [" + x + "," + y + "]");
                 ResizeImage(pathImage16_9, pathBackground, x, y);
+            }
 
-                parserConst.AddSetting("Resolutions", "Res1_x", x.ToString());
-                parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
-                lineChanger("Larghezza = "+x, pathTemplate, 2);
-                lineChanger("Altezza = "+y, pathTemplate, 3);
+
+            parserConst.AddSetting("Resolutions", "Res1_x", x.ToString());
+            parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
+            lineChanger("Larghezza = " + x, pathTemplate, 2);
+            lineChanger("Altezza = " + y, pathTemplate, 3);
 
             parserConst.SaveSettings();
             parserSettings.SaveSettings();
@@ -78,12 +82,12 @@ namespace launcher_imperivm_iii
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
             simpleSound.PlayLooping();
 
             var pakLanguages = new DirectoryInfo("local").GetFiles("*.pak");
-            for(int i = 0; i < pakLanguages.Length; i++)
+            for (int i = 0; i < pakLanguages.Length; i++)
             {
                 language.Items.Add(FirstCharToUpper(pakLanguages[i].Name.Split('.')[0]));
             }
@@ -109,11 +113,11 @@ namespace launcher_imperivm_iii
             ArrayList list = readLines(pathTextResolutions);
             foreach (string i in list)
             {
-                if (!i.Equals("\n")&& !i.Equals(""))
+                if (!i.Equals("\n") && !i.Equals(""))
                 {
                     resolution.Items.Add(i);
                 }
-                
+
             }
 
             resolution.SelectedIndex = int.Parse(parserLauncher.GetSetting("Default", "Resolution"));
@@ -133,7 +137,7 @@ namespace launcher_imperivm_iii
 
         private void loadLanguageLauncher()
         {
-            
+
 
             if (parserLauncher != null)
             {
@@ -141,10 +145,6 @@ namespace launcher_imperivm_iii
                 parserLauncher.SaveSettings();
 
                 String defaultLanguage = parserLauncher.GetSetting("Default", "Language");
-
-                //labelLanguage.Text = parserLauncher.GetSetting(defaultLanguage, "LabelLanguage");
-                //playButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonPlay");
-                //saveButton.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonSave");
                 buttonAdventures.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonAdventures");
                 buttonScenarios.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonScenarios");
                 buttonProfiles.Text = parserLauncher.GetSetting(defaultLanguage, "ButtonProfiles");
@@ -155,7 +155,7 @@ namespace launcher_imperivm_iii
                 tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
                 tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
 
-                if(parserLauncher.GetSetting("Default", "Admin") == "1")
+                if (parserLauncher.GetSetting("Default", "Admin") == "1")
                 {
                     checkBox1.Checked = true;
                 }
@@ -163,7 +163,7 @@ namespace launcher_imperivm_iii
                 {
                     checkBox1.Checked = false;
                 }
-            } 
+            }
         }
 
         private void loadFolderMods()
@@ -176,11 +176,11 @@ namespace launcher_imperivm_iii
                 if (!noMods.Contains(name))
                 {
                     listMods.Items.Add(name.ToLower());
-                    if (name!=name.ToUpper())
+                    if (name != name.ToUpper())
                     {
                         listMods.SetItemChecked(listMods.FindStringExact(name.ToLower()), true);
                     }
-                    
+
                 }
             }
         }
@@ -199,10 +199,10 @@ namespace launcher_imperivm_iii
                 System.IO.File.Move(@"Packs/" + item + ".pak", @"Packs/" + item.ToUpper() + ".pak");
             }
             else
-            { 
+            {
                 System.IO.File.Move(@"Packs/" + item.ToUpper() + ".pak", @"Packs/" + item + ".pak");
             }
-            
+
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -256,7 +256,7 @@ namespace launcher_imperivm_iii
 
         private void buttonPacks_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer.exe", @"Packs"); 
+            System.Diagnostics.Process.Start("explorer.exe", @"Packs");
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -280,7 +280,6 @@ namespace launcher_imperivm_iii
             }
             processStartInfo.FileName = @"gbr.exe";
             System.Diagnostics.Process.Start(processStartInfo);
-            //Process.Start(@"gbr.exe");
 
             Application.Exit();
         }
@@ -297,7 +296,7 @@ namespace launcher_imperivm_iii
                 simpleSound.PlayLooping();
                 isSoundPlay = true;
             }
-            
+
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
@@ -347,7 +346,7 @@ namespace launcher_imperivm_iii
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             changeLanguageResolution();
-            
+
             System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
             if (checkBox1.Checked)
             {
@@ -355,7 +354,6 @@ namespace launcher_imperivm_iii
             }
             processStartInfo.FileName = @"gbr.exe";
             System.Diagnostics.Process.Start(processStartInfo);
-            //Process.Start(@"gbr.exe");
 
             Application.Exit();
         }
@@ -375,7 +373,7 @@ namespace launcher_imperivm_iii
             System.Diagnostics.Process.Start("https://github.com/fabiomarigo7/imperivm-steam");
         }
 
-        public void ResizeImage(string input,string output, int width, int height)
+        public void ResizeImage(string input, string output, int width, int height)
         {
             using (var image = Image.FromFile(input))
             using (var newImage = ScaleImage(image, width, height))
@@ -391,9 +389,9 @@ namespace launcher_imperivm_iii
 
             using (Graphics GFX = Graphics.FromImage((Bitmap)newImage))
             {
-                GFX.DrawImage(image,new Rectangle(Point.Empty, newSize));
+                GFX.DrawImage(image, new Rectangle(Point.Empty, newSize));
             }
-                return newImage;
+            return newImage;
         }
 
 
@@ -426,13 +424,13 @@ namespace launcher_imperivm_iii
 
         private void pictureBox17_Click(object sender, EventArgs e)
         {
-            if (!resX.Text.Equals("")&& !resY.Text.Equals(""))
+            if (!resX.Text.Equals("") && !resY.Text.Equals(""))
             {
                 File.AppendAllText(pathTextResolutions, "\n" + resX.Text + "x" + resY.Text);
                 resolution.Items.Clear();
                 listResolution();
             }
-            
+
         }
 
         private void resX_KeyPress(object sender, KeyPressEventArgs e)
@@ -456,7 +454,7 @@ namespace launcher_imperivm_iii
                 {
                     if (!lines[i].Equals(searchFor) && !lines[i].Equals("") && !lines[i].Equals("\n"))
                     {
-                        newLines.Add(lines[i]); 
+                        newLines.Add(lines[i]);
                     }
                 }
                 resolution.Items.Clear();
@@ -466,7 +464,7 @@ namespace launcher_imperivm_iii
                 {
                     endLinesArray[i] = newLines[i];
                 }
-                    
+
                 File.WriteAllLines(pathTextResolutions, endLinesArray);
                 listResolution();
             }
