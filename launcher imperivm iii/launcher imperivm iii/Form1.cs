@@ -60,7 +60,7 @@ namespace launcher_imperivm_iii
         {
             
             parserSettings.AddSetting("Language", "Default", language.Text);
-            //parserSettings.AddSetting("Options", "Resolution", resolution.SelectedIndex.ToString());
+            parserLauncher.AddSetting("Default", "Resolution", resolution.SelectedIndex.ToString());
 
                 int x = int.Parse(resolution.Text.Split('x')[0]);
                 int y = int.Parse(resolution.Text.Split('x')[1]);
@@ -71,18 +71,6 @@ namespace launcher_imperivm_iii
                 parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
                 lineChanger("Larghezza = "+x, pathTemplate, 2);
                 lineChanger("Altezza = "+y, pathTemplate, 3);
-
-
-            
-            /*catch
-            {
-                parserConst.AddSetting("Resolutions", "Res1_x", "1920");
-                parserConst.AddSetting("Resolutions", "Res1_y", "1080");
-                ResizeImage(pathImage16_9, pathBackground, 1920, 1080);
-
-                lineChanger("Larghezza = 1920", pathTemplate, 2);
-                lineChanger("Altezza = 1080" , pathTemplate, 3);
-            }*/
 
             parserConst.SaveSettings();
             parserSettings.SaveSettings();
@@ -468,7 +456,6 @@ namespace launcher_imperivm_iii
                 {
                     if (!lines[i].Equals(searchFor) && !lines[i].Equals("") && !lines[i].Equals("\n"))
                     {
-                        //lineChanger("", "resolutions.txt", i);
                         newLines.Add(lines[i]); 
                     }
                 }
