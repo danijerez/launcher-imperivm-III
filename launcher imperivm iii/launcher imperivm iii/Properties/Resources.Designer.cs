@@ -73,6 +73,16 @@ namespace launcher_imperivm_iii.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altavoz_herramienta_de_audio_llena {
+            get {
+                object obj = ResourceManager.GetObject("altavoz-herramienta-de-audio-llena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bandera_en_un_planeta_bajo_las_estrellas {
             get {
                 object obj = ResourceManager.GetObject("bandera-en-un-planeta-bajo-las-estrellas", resourceCulture);

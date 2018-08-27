@@ -322,6 +322,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(211, 43);
             this.label4.Name = "label4";
@@ -422,6 +423,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
             this.pictureBox1.Location = new System.Drawing.Point(6, 15);
             this.pictureBox1.Name = "pictureBox1";
@@ -538,6 +540,7 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Image = global::launcher_imperivm_iii.Properties.Resources.github;
             this.pictureBox12.Location = new System.Drawing.Point(104, 176);
             this.pictureBox12.Name = "pictureBox12";
@@ -549,6 +552,7 @@
             // 
             // pictureBox11
             // 
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox11.Image = global::launcher_imperivm_iii.Properties.Resources.logo_de_aplicacion_de_facebook;
             this.pictureBox11.Location = new System.Drawing.Point(61, 176);
             this.pictureBox11.Name = "pictureBox11";
@@ -560,6 +564,7 @@
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox10.Image = global::launcher_imperivm_iii.Properties.Resources.discord1;
             this.pictureBox10.Location = new System.Drawing.Point(18, 176);
             this.pictureBox10.Name = "pictureBox10";
@@ -571,7 +576,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.indicador_del_volumen_apagado;
+            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.altavoz_herramienta_de_audio_llena;
             this.pictureBox5.Location = new System.Drawing.Point(251, 313);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 21);

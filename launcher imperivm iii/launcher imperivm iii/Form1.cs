@@ -56,10 +56,10 @@ namespace launcher_imperivm_iii
             int x = int.Parse(resolution.Text.Split('x')[0]);
             int y = int.Parse(resolution.Text.Split('x')[1]);
 
-            Decimal is_16_9 = Decimal.Divide(x, y) - Decimal.Divide(16, 9);
-            Decimal is_4_3 = Decimal.Divide(x, y) - Decimal.Divide(4, 3);
+            Decimal is_16_9 = Math.Abs(Decimal.Divide(x, y) - Decimal.Divide(16, 9));
+            Decimal is_4_3 = Math.Abs(Decimal.Divide(x, y) - Decimal.Divide(4, 3));
 
-            if (is_4_3 == 0)
+            if ((is_4_3 - is_16_9) < 0)
             {
                 Console.WriteLine(is_4_3 + " 4:3 [" + x + "," + y + "]");
                 ResizeImage(pathImage4_3, pathBackground, x, y);
@@ -288,11 +288,13 @@ namespace launcher_imperivm_iii
         {
             if (isSoundPlay)
             {
+                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.indicador_del_volumen_apagado;
                 isSoundPlay = false;
                 simpleSound.Stop();
             }
             else
             {
+                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.altavoz_herramienta_de_audio_llena;
                 simpleSound.PlayLooping();
                 isSoundPlay = true;
             }

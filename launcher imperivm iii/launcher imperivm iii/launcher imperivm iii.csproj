@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\altavoz-herramienta-de-audio-llena.png" />
     <None Include="Resources\menos.png" />
     <None Include="Resources\mas.png" />
     <None Include="Resources\carpeta.png" />
