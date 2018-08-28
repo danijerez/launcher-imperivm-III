@@ -32,8 +32,12 @@
             this.language = new System.Windows.Forms.ComboBox();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
             this.checkBox1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.resY = new System.Windows.Forms.TextBox();
@@ -42,42 +46,36 @@
             this.buttonAdventures = new System.Windows.Forms.Button();
             this.buttonConquest = new System.Windows.Forms.Button();
             this.buttonScenarios = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.listMods = new System.Windows.Forms.CheckedListBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.version = new MaterialSkin.Controls.MaterialLabel();
-            this.resolution = new System.Windows.Forms.ComboBox();
-            this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.listMods = new System.Windows.Forms.CheckedListBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
+            this.version = new MaterialSkin.Controls.MaterialLabel();
+            this.resolution = new System.Windows.Forms.ComboBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -85,7 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -135,11 +135,27 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             // 
+            // saveButton
+            // 
+            this.saveButton.AutoSize = true;
+            this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.saveButton.Depth = 0;
+            this.saveButton.Icon = global::launcher_imperivm_iii.Properties.Resources.save;
+            this.saveButton.Location = new System.Drawing.Point(63, 182);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Primary = false;
+            this.saveButton.Size = new System.Drawing.Size(44, 36);
+            this.saveButton.TabIndex = 15;
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Depth = 0;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBox1.Font = new System.Drawing.Font("Roboto", 10F);
             this.checkBox1.Location = new System.Drawing.Point(37, 186);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -149,6 +165,30 @@
             this.checkBox1.Size = new System.Drawing.Size(26, 30);
             this.checkBox1.TabIndex = 11;
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 187);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 203);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // tabPage2
             // 
@@ -174,6 +214,18 @@
             this.tabPage2.Size = new System.Drawing.Size(392, 218);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Utilities";
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox18.Image = global::launcher_imperivm_iii.Properties.Resources.menos;
+            this.pictureBox18.Location = new System.Drawing.Point(306, 177);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 36;
+            this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
             // 
             // label6
             // 
@@ -277,6 +329,68 @@
             this.buttonScenarios.UseVisualStyleBackColor = false;
             this.buttonScenarios.Click += new System.EventHandler(this.buttonScenarios_Click);
             // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox17.Image = global::launcher_imperivm_iii.Properties.Resources.mas;
+            this.pictureBox17.Location = new System.Drawing.Point(270, 177);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 34;
+            this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::launcher_imperivm_iii.Properties.Resources.res;
+            this.pictureBox16.Location = new System.Drawing.Point(69, 181);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 23;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::launcher_imperivm_iii.Properties.Resources.reanudar;
+            this.pictureBox9.Location = new System.Drawing.Point(204, 87);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 29;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.bandera_en_un_planeta_bajo_las_estrellas;
+            this.pictureBox8.Location = new System.Drawing.Point(20, 87);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 28;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.casco_romano;
+            this.pictureBox7.Location = new System.Drawing.Point(204, 27);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::launcher_imperivm_iii.Properties.Resources.mapa;
+            this.pictureBox6.Location = new System.Drawing.Point(20, 27);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 26;
+            this.pictureBox6.TabStop = false;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.pictureBox15);
@@ -288,6 +402,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODs";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox15.Image = global::launcher_imperivm_iii.Properties.Resources.carpeta;
+            this.pictureBox15.Location = new System.Drawing.Point(349, 179);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 30;
+            this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
             // 
             // listMods
             // 
@@ -361,163 +487,6 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Imperivm World";
             // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(5, 28);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(407, 33);
-            this.materialTabSelector1.TabIndex = 8;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // version
-            // 
-            this.version.AutoSize = true;
-            this.version.Depth = 0;
-            this.version.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.version.Location = new System.Drawing.Point(274, 314);
-            this.version.MouseState = MaterialSkin.MouseState.HOVER;
-            this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(140, 18);
-            this.version.TabIndex = 19;
-            this.version.Text = "GBR HD Beta v1.51";
-            // 
-            // resolution
-            // 
-            this.resolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resolution.FormattingEnabled = true;
-            this.resolution.Location = new System.Drawing.Point(159, 313);
-            this.resolution.Name = "resolution";
-            this.resolution.Size = new System.Drawing.Size(86, 22);
-            this.resolution.TabIndex = 20;
-            // 
-            // saveButton
-            // 
-            this.saveButton.AutoSize = true;
-            this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveButton.Depth = 0;
-            this.saveButton.Icon = global::launcher_imperivm_iii.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(63, 182);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Primary = false;
-            this.saveButton.Size = new System.Drawing.Size(44, 36);
-            this.saveButton.TabIndex = 15;
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 187);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 203);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Image = global::launcher_imperivm_iii.Properties.Resources.menos;
-            this.pictureBox18.Location = new System.Drawing.Point(306, 177);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(30, 29);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox18.TabIndex = 36;
-            this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Image = global::launcher_imperivm_iii.Properties.Resources.mas;
-            this.pictureBox17.Location = new System.Drawing.Point(270, 177);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(30, 29);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 34;
-            this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::launcher_imperivm_iii.Properties.Resources.res;
-            this.pictureBox16.Location = new System.Drawing.Point(69, 181);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(24, 21);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 23;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::launcher_imperivm_iii.Properties.Resources.reanudar;
-            this.pictureBox9.Location = new System.Drawing.Point(204, 87);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 29;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.bandera_en_un_planeta_bajo_las_estrellas;
-            this.pictureBox8.Location = new System.Drawing.Point(20, 87);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 28;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.casco_romano;
-            this.pictureBox7.Location = new System.Drawing.Point(204, 27);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::launcher_imperivm_iii.Properties.Resources.mapa;
-            this.pictureBox6.Location = new System.Drawing.Point(20, 27);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 26;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::launcher_imperivm_iii.Properties.Resources.carpeta;
-            this.pictureBox15.Location = new System.Drawing.Point(349, 179);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(35, 34);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 30;
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
-            // 
             // pictureBox14
             // 
             this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.Logo_haemimont_svg;
@@ -573,6 +542,40 @@
             this.pictureBox10.TabIndex = 27;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Location = new System.Drawing.Point(5, 28);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(407, 33);
+            this.materialTabSelector1.TabIndex = 8;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.Depth = 0;
+            this.version.Font = new System.Drawing.Font("Roboto", 11F);
+            this.version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.version.Location = new System.Drawing.Point(274, 314);
+            this.version.MouseState = MaterialSkin.MouseState.HOVER;
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(135, 19);
+            this.version.TabIndex = 19;
+            this.version.Text = "GBR HD Beta v1.51";
+            // 
+            // resolution
+            // 
+            this.resolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resolution.FormattingEnabled = true;
+            this.resolution.Location = new System.Drawing.Point(159, 313);
+            this.resolution.Name = "resolution";
+            this.resolution.Size = new System.Drawing.Size(86, 22);
+            this.resolution.TabIndex = 20;
             // 
             // pictureBox5
             // 
@@ -630,13 +633,10 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -644,7 +644,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
