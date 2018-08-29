@@ -89,7 +89,9 @@ namespace launcher_imperivm_iii
             var pakLanguages = new DirectoryInfo("local").GetFiles("*.pak");
             for (int i = 0; i < pakLanguages.Length; i++)
             {
-                language.Items.Add(FirstCharToUpper(pakLanguages[i].Name.Split('.')[0]));
+                String l = pakLanguages[i].Name.Split('.')[0];
+                language.Items.Add(FirstCharToUpper(l));
+                
             }
 
             IniParser parser = new IniParser(@"Settings.ini");
@@ -106,6 +108,26 @@ namespace launcher_imperivm_iii
             loadFolderMods();
             resolution.Refresh();
             this.Refresh();
+        }
+
+        public void changeFolderMovies(string l)
+        {
+            if (l.Equals("spanish"))
+            {
+                if (!Directory.Exists(@"Movies_ITA"))
+                {
+                    Directory.Move(@"Movies", @"Movies_ITA");
+                    Directory.Move(@"Movies_SPA", @"Movies");
+                }
+            }
+            else if (l.Equals("italian"))
+            {
+                if (!Directory.Exists(@"Movies_SPA"))
+                {
+                    Directory.Move(@"Movies", @"Movies_SPA");
+                    Directory.Move(@"Movies_ITA", @"Movies");
+                }
+            }
         }
 
         public void listResolution()
@@ -163,6 +185,8 @@ namespace launcher_imperivm_iii
                 {
                     checkBox1.Checked = false;
                 }
+
+                changeFolderMovies(language.Text.ToLower());
             }
         }
 
@@ -180,7 +204,6 @@ namespace launcher_imperivm_iii
                     {
                         listMods.SetItemChecked(listMods.FindStringExact(name.ToLower()), true);
                     }
-
                 }
             }
         }
