@@ -288,13 +288,13 @@ namespace launcher_imperivm_iii
         {
             if (isSoundPlay)
             {
-                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.indicador_del_volumen_apagado;
+                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.soundOff;
                 isSoundPlay = false;
                 simpleSound.Stop();
             }
             else
             {
-                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.altavoz_herramienta_de_audio_llena;
+                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.soundOn;
                 simpleSound.PlayLooping();
                 isSoundPlay = true;
             }
@@ -331,7 +331,7 @@ namespace launcher_imperivm_iii
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            Bitmap img = launcher_imperivm_iii.Properties.Resources.logo1;
+            Bitmap img = launcher_imperivm_iii.Properties.Resources.logoPlay;
             img.MakeTransparent(img.GetPixel(0, 0));
             pictureBox1.Image = AdjustBrightness(img, 50);
             pictureBox1.BackColor = Color.Transparent;
@@ -339,7 +339,7 @@ namespace launcher_imperivm_iii
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            Bitmap img = launcher_imperivm_iii.Properties.Resources.logo1;
+            Bitmap img = launcher_imperivm_iii.Properties.Resources.logoPlay;
             img.MakeTransparent(img.GetPixel(0, 0));
             pictureBox1.Image = img;
             pictureBox1.BackColor = Color.Transparent;

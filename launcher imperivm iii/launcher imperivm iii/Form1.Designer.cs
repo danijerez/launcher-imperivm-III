@@ -179,7 +179,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logo1;
+            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
             this.pictureBox1.Location = new System.Drawing.Point(6, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(379, 203);
@@ -363,7 +363,7 @@
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.bandera_en_un_planeta_bajo_las_estrellas;
+            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.conquest;
             this.pictureBox8.Location = new System.Drawing.Point(20, 87);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(52, 51);
@@ -373,7 +373,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.casco_romano;
+            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.adventure;
             this.pictureBox7.Location = new System.Drawing.Point(204, 27);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(52, 51);
@@ -489,7 +489,7 @@
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.Logo_haemimont_svg;
+            this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.haemimont;
             this.pictureBox14.Location = new System.Drawing.Point(194, 176);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(104, 34);
@@ -499,7 +499,7 @@
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::launcher_imperivm_iii.Properties.Resources.Logo_FX_fondo_transparente;
+            this.pictureBox13.Image = global::launcher_imperivm_iii.Properties.Resources.fx;
             this.pictureBox13.Location = new System.Drawing.Point(304, 176);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(64, 34);
@@ -522,7 +522,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Image = global::launcher_imperivm_iii.Properties.Resources.logo_de_aplicacion_de_facebook;
+            this.pictureBox11.Image = global::launcher_imperivm_iii.Properties.Resources.facebook;
             this.pictureBox11.Location = new System.Drawing.Point(61, 176);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(35, 34);
@@ -534,7 +534,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox10.Image = global::launcher_imperivm_iii.Properties.Resources.discord1;
+            this.pictureBox10.Image = global::launcher_imperivm_iii.Properties.Resources.discord;
             this.pictureBox10.Location = new System.Drawing.Point(18, 176);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(35, 34);
@@ -579,7 +579,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.altavoz_herramienta_de_audio_llena;
+            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.soundOn;
             this.pictureBox5.Location = new System.Drawing.Point(251, 313);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 21);
