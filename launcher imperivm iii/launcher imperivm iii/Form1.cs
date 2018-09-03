@@ -15,6 +15,9 @@ using MaterialSkin;
 using System.Media;
 using System.Drawing.Imaging;
 using System.Collections;
+using System.Net;
+using System.Net.Sockets;
+using System.Text.RegularExpressions;
 
 namespace launcher_imperivm_iii
 {
@@ -80,9 +83,40 @@ namespace launcher_imperivm_iii
             parserSettings.SaveSettings();
         }
 
+        public class AutoClosingMessageBox
+        {
+            System.Threading.Timer _timeoutTimer;
+            string _caption;
+            AutoClosingMessageBox(string text, string caption, int timeout)
+            {
+                _caption = caption;
+                _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+                    null, timeout, System.Threading.Timeout.Infinite);
+                using (_timeoutTimer)
+                    MessageBox.Show(text, caption);
+            }
+            public static void Show(string text, string caption, int timeout)
+            {
+                new AutoClosingMessageBox(text, caption, timeout);
+            }
+            void OnTimerElapsed(object state)
+            {
+                IntPtr mbWnd = FindWindow("#32770", _caption); // lpClassName is #32770 for MessageBox
+                if (mbWnd != IntPtr.Zero)
+                    SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                _timeoutTimer.Dispose();
+            }
+            const int WM_CLOSE = 0x0010;
+            [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+            static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+            [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+            static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            Get_Ip_Address_Load();
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
             simpleSound.PlayLooping();
 
@@ -108,6 +142,58 @@ namespace launcher_imperivm_iii
             loadFolderMods();
             resolution.Refresh();
             this.Refresh();
+        }
+
+        private void Get_Ip_Address_Load()
+        {
+
+            IPHostEntry iph;
+            string myip = "";
+            iph = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in iph.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    myip = ip.ToString();
+                }
+            }
+
+            string externalIP = "";
+            externalIP = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
+            externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")).Matches(externalIP)[0].ToString();
+
+            myIp.Text = externalIP;
+
+        }
+
+        public void checkPorts()
+        {
+            using (TcpClient tcpClient = new TcpClient())
+            {
+                try
+                {
+                    tcpClient.Connect(myIp.Text, 40444);
+                    bad1.Image = launcher_imperivm_iii.Properties.Resources.bien;
+                    Console.WriteLine("Port 40444 open");
+                }
+                catch (Exception)
+                {
+                    bad1.Image = launcher_imperivm_iii.Properties.Resources.mal;
+                    Console.WriteLine("Port 40444 closed");
+                }
+
+                try
+                {
+                    tcpClient.Connect(myIp.Text, 40447);
+                    bad2.Image = launcher_imperivm_iii.Properties.Resources.bien;
+                    Console.WriteLine("Port 40447 open");
+                }
+                catch (Exception)
+                {
+                    bad2.Image = launcher_imperivm_iii.Properties.Resources.mal;
+                    Console.WriteLine("Port 40447 closed");
+                }
+            }
         }
 
         public void changeFolderMovies(string l)
@@ -159,8 +245,7 @@ namespace launcher_imperivm_iii
 
         private void loadLanguageLauncher()
         {
-
-
+            saveButton.Image = launcher_imperivm_iii.Properties.Resources.save;
             if (parserLauncher != null)
             {
                 parserLauncher.AddSetting("Default", "Language", language.Text);
@@ -210,6 +295,7 @@ namespace launcher_imperivm_iii
 
         private void language_SelectedIndexChanged(object sender, EventArgs e)
         {
+            saveButton.Image = launcher_imperivm_iii.Properties.Resources.save;
             loadLanguageLauncher();
             this.Refresh();
         }
@@ -232,6 +318,7 @@ namespace launcher_imperivm_iii
         {
             changeLanguageResolution();
             parserLauncher.SaveSettings();
+            saveButton.Image = launcher_imperivm_iii.Properties.Resources.saveOk;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -498,6 +585,26 @@ namespace launcher_imperivm_iii
         private void label4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://twitter.com/d4nijerez");
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void myIp_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(myIp.Text);
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(myIp.Text);
+        }
+
+        private void pictureBox20_Click(object sender, EventArgs e)
+        {
+            checkPorts();
         }
     }
 }

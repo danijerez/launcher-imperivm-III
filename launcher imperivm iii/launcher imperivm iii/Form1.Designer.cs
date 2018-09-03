@@ -34,6 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.myIp = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.resY = new System.Windows.Forms.TextBox();
@@ -52,9 +53,15 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.version = new MaterialSkin.Controls.MaterialLabel();
             this.resolution = new System.Windows.Forms.ComboBox();
-            this.saveButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.bad2 = new System.Windows.Forms.PictureBox();
+            this.bad1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -76,8 +83,13 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bad2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bad1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -99,7 +111,7 @@
             // language
             // 
             this.language.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.language.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.language.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language.FormattingEnabled = true;
             this.language.Location = new System.Drawing.Point(39, 313);
             this.language.Name = "language";
@@ -153,7 +165,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
-            this.tabPage2.Controls.Add(this.pictureBox18);
+            this.tabPage2.Controls.Add(this.pictureBox20);
+            this.tabPage2.Controls.Add(this.bad2);
+            this.tabPage2.Controls.Add(this.bad1);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.myIp);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.resY);
@@ -162,6 +179,8 @@
             this.tabPage2.Controls.Add(this.buttonAdventures);
             this.tabPage2.Controls.Add(this.buttonConquest);
             this.tabPage2.Controls.Add(this.buttonScenarios);
+            this.tabPage2.Controls.Add(this.pictureBox19);
+            this.tabPage2.Controls.Add(this.pictureBox18);
             this.tabPage2.Controls.Add(this.pictureBox17);
             this.tabPage2.Controls.Add(this.pictureBox16);
             this.tabPage2.Controls.Add(this.pictureBox9);
@@ -174,22 +193,35 @@
             this.tabPage2.Size = new System.Drawing.Size(392, 218);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Utilities";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // myIp
+            // 
+            this.myIp.AutoSize = true;
+            this.myIp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.myIp.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myIp.Location = new System.Drawing.Point(43, 180);
+            this.myIp.Name = "myIp";
+            this.myIp.Size = new System.Drawing.Size(23, 21);
+            this.myIp.TabIndex = 37;
+            this.myIp.Text = "ip";
+            this.myIp.Click += new System.EventHandler(this.myIp_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(90, 153);
+            this.label6.Location = new System.Drawing.Point(15, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(230, 21);
+            this.label6.Size = new System.Drawing.Size(101, 21);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Add/Remove custom resolution";
+            this.label6.Text = "Add/Remove";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(174, 182);
+            this.label5.Location = new System.Drawing.Point(220, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 21);
             this.label5.TabIndex = 33;
@@ -199,7 +231,7 @@
             // 
             this.resY.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resY.Location = new System.Drawing.Point(191, 183);
+            this.resY.Location = new System.Drawing.Point(237, 142);
             this.resY.Name = "resY";
             this.resY.Size = new System.Drawing.Size(70, 19);
             this.resY.TabIndex = 32;
@@ -210,7 +242,7 @@
             // 
             this.resX.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resX.Location = new System.Drawing.Point(103, 182);
+            this.resX.Location = new System.Drawing.Point(149, 141);
             this.resX.Name = "resX";
             this.resX.Size = new System.Drawing.Size(70, 19);
             this.resX.TabIndex = 31;
@@ -224,7 +256,7 @@
             this.buttonProfiles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonProfiles.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonProfiles.ForeColor = System.Drawing.Color.White;
-            this.buttonProfiles.Location = new System.Drawing.Point(262, 87);
+            this.buttonProfiles.Location = new System.Drawing.Point(262, 71);
             this.buttonProfiles.Name = "buttonProfiles";
             this.buttonProfiles.Size = new System.Drawing.Size(116, 51);
             this.buttonProfiles.TabIndex = 25;
@@ -239,7 +271,7 @@
             this.buttonAdventures.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdventures.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonAdventures.ForeColor = System.Drawing.Color.White;
-            this.buttonAdventures.Location = new System.Drawing.Point(262, 27);
+            this.buttonAdventures.Location = new System.Drawing.Point(262, 11);
             this.buttonAdventures.Name = "buttonAdventures";
             this.buttonAdventures.Size = new System.Drawing.Size(116, 51);
             this.buttonAdventures.TabIndex = 24;
@@ -254,7 +286,7 @@
             this.buttonConquest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonConquest.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
             this.buttonConquest.ForeColor = System.Drawing.Color.White;
-            this.buttonConquest.Location = new System.Drawing.Point(78, 87);
+            this.buttonConquest.Location = new System.Drawing.Point(78, 71);
             this.buttonConquest.Name = "buttonConquest";
             this.buttonConquest.Size = new System.Drawing.Size(114, 51);
             this.buttonConquest.TabIndex = 23;
@@ -269,7 +301,7 @@
             this.buttonScenarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonScenarios.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonScenarios.ForeColor = System.Drawing.Color.White;
-            this.buttonScenarios.Location = new System.Drawing.Point(78, 27);
+            this.buttonScenarios.Location = new System.Drawing.Point(78, 11);
             this.buttonScenarios.Name = "buttonScenarios";
             this.buttonScenarios.Size = new System.Drawing.Size(114, 51);
             this.buttonScenarios.TabIndex = 22;
@@ -389,33 +421,49 @@
             // resolution
             // 
             this.resolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resolution.FormattingEnabled = true;
             this.resolution.Location = new System.Drawing.Point(159, 313);
             this.resolution.Name = "resolution";
             this.resolution.Size = new System.Drawing.Size(86, 22);
             this.resolution.TabIndex = 20;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(155, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 21);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "40444";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(242, 181);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 21);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "40447";
+            // 
             // saveButton
             // 
-            this.saveButton.AutoSize = true;
-            this.saveButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveButton.Depth = 0;
-            this.saveButton.Icon = global::launcher_imperivm_iii.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(63, 182);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.saveButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Image = global::launcher_imperivm_iii.Properties.Resources.save;
+            this.saveButton.Location = new System.Drawing.Point(67, 191);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Primary = false;
-            this.saveButton.Size = new System.Drawing.Size(44, 36);
-            this.saveButton.TabIndex = 15;
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.materialFlatButton1_Click);
+            this.saveButton.Size = new System.Drawing.Size(20, 20);
+            this.saveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.saveButton.TabIndex = 19;
+            this.saveButton.TabStop = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
-            this.pictureBox2.Location = new System.Drawing.Point(13, 187);
+            this.pictureBox2.Location = new System.Drawing.Point(14, 187);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -428,7 +476,7 @@
             this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
             this.pictureBox1.Location = new System.Drawing.Point(6, 15);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 203);
+            this.pictureBox1.Size = new System.Drawing.Size(379, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -436,11 +484,55 @@
             this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox20.Image = global::launcher_imperivm_iii.Properties.Resources.refresh;
+            this.pictureBox20.Location = new System.Drawing.Point(350, 177);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 43;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click);
+            // 
+            // bad2
+            // 
+            this.bad2.Image = global::launcher_imperivm_iii.Properties.Resources.mal;
+            this.bad2.Location = new System.Drawing.Point(294, 181);
+            this.bad2.Name = "bad2";
+            this.bad2.Size = new System.Drawing.Size(20, 20);
+            this.bad2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bad2.TabIndex = 42;
+            this.bad2.TabStop = false;
+            // 
+            // bad1
+            // 
+            this.bad1.Image = global::launcher_imperivm_iii.Properties.Resources.mal;
+            this.bad1.Location = new System.Drawing.Point(207, 181);
+            this.bad1.Name = "bad1";
+            this.bad1.Size = new System.Drawing.Size(20, 20);
+            this.bad1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bad1.TabIndex = 41;
+            this.bad1.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox19.Image = global::launcher_imperivm_iii.Properties.Resources.ipclipboard;
+            this.pictureBox19.Location = new System.Drawing.Point(17, 177);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 38;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
+            // 
             // pictureBox18
             // 
             this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox18.Image = global::launcher_imperivm_iii.Properties.Resources.menos;
-            this.pictureBox18.Location = new System.Drawing.Point(306, 177);
+            this.pictureBox18.Location = new System.Drawing.Point(348, 136);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(30, 29);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +544,7 @@
             // 
             this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox17.Image = global::launcher_imperivm_iii.Properties.Resources.mas;
-            this.pictureBox17.Location = new System.Drawing.Point(270, 177);
+            this.pictureBox17.Location = new System.Drawing.Point(312, 136);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(30, 29);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -463,7 +555,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = global::launcher_imperivm_iii.Properties.Resources.res;
-            this.pictureBox16.Location = new System.Drawing.Point(69, 181);
+            this.pictureBox16.Location = new System.Drawing.Point(119, 140);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(24, 21);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -473,7 +565,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::launcher_imperivm_iii.Properties.Resources.reanudar;
-            this.pictureBox9.Location = new System.Drawing.Point(204, 87);
+            this.pictureBox9.Location = new System.Drawing.Point(204, 71);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(52, 51);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -483,7 +575,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.conquest;
-            this.pictureBox8.Location = new System.Drawing.Point(20, 87);
+            this.pictureBox8.Location = new System.Drawing.Point(20, 71);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(52, 51);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -493,7 +585,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.adventure;
-            this.pictureBox7.Location = new System.Drawing.Point(204, 27);
+            this.pictureBox7.Location = new System.Drawing.Point(204, 11);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(52, 51);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -503,7 +595,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::launcher_imperivm_iii.Properties.Resources.mapa;
-            this.pictureBox6.Location = new System.Drawing.Point(20, 27);
+            this.pictureBox6.Location = new System.Drawing.Point(20, 11);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(52, 51);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -639,8 +731,13 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bad2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bad1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -671,7 +768,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.CheckedListBox listMods;
         private MaterialSkin.Controls.MaterialCheckBox checkBox1;
-        private MaterialSkin.Controls.MaterialFlatButton saveButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel version;
         private System.Windows.Forms.ComboBox resolution;
@@ -705,6 +801,14 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.Label myIp;
+        private System.Windows.Forms.PictureBox saveButton;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox bad1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox bad2;
+        private System.Windows.Forms.PictureBox pictureBox20;
     }
 }
 

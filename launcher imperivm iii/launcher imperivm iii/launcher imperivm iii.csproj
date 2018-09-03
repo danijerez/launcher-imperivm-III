@@ -104,6 +104,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\mal.png" />
+    <None Include="Resources\bien.png" />
+    <None Include="Resources\ipclipboard.png" />
+    <None Include="Resources\saveOk.png" />
     <None Include="Resources\altavoz-herramienta-de-audio-llena.png" />
     <None Include="Resources\menos.png" />
     <None Include="Resources\mas.png" />
