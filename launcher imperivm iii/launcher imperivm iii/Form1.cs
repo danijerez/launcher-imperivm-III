@@ -85,6 +85,7 @@ namespace launcher_imperivm_iii
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             Get_Ip_Address_Load();
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
             simpleSound.PlayLooping();
@@ -117,34 +118,49 @@ namespace launcher_imperivm_iii
         {
 
             IPHostEntry iph;
-            string myip = "";
-            iph = Dns.GetHostEntry(Dns.GetHostName());
-            foreach (IPAddress ip in iph.AddressList)
+            string myip = "-";
+
+            try
             {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                iph = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (IPAddress ip in iph.AddressList)
                 {
-                    myip = ip.ToString();
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        myip = ip.ToString();
+                    }
                 }
+
+                string externalIP = "";
+                externalIP = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
+                externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")).Matches(externalIP)[0].ToString();
+
+                myIp.Text = externalIP;
+            }
+            catch
+            {
+                myIp.Text = "-";
             }
 
-            string externalIP = "";
-            externalIP = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
-            externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")).Matches(externalIP)[0].ToString();
+        }
 
-            myIp.Text = externalIP;
-
+        public void changeCursor(Image cursor)
+        {
+            Bitmap img = new Bitmap(cursor, 50, 50);
+            img.MakeTransparent(img.GetPixel(0, 0));
+            PictureBox pb = new PictureBox() { Image = img };
+            Cursor.Current = new Cursor(((Bitmap)pb.Image).GetHicon());
         }
 
         public Image checkPort(String ip, int port)
         {
-            Cursor.Current = Cursors.WaitCursor;
             using (TcpClient tcpClient = new TcpClient())
             {
                 //40444 40445 40446 40447 UDP
                 try
                 {
                     tcpClient.Connect(ip, port);
-                    Console.WriteLine("Port "+port+" open");
+                    Console.WriteLine("Port " + port + " open");
                     return launcher_imperivm_iii.Properties.Resources.bien;
                     
                 }
@@ -365,7 +381,7 @@ namespace launcher_imperivm_iii
             }
             else
             {
-                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.soundOn;
+                pictureBox5.Image = launcher_imperivm_iii.Properties.Resources.soundOk;
                 simpleSound.PlayLooping();
                 isSoundPlay = true;
             }
@@ -565,13 +581,25 @@ namespace launcher_imperivm_iii
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+            bad1.Image = launcher_imperivm_iii.Properties.Resources.pregunta;
+            bad2.Image = launcher_imperivm_iii.Properties.Resources.pregunta;
+            bad3.Image = launcher_imperivm_iii.Properties.Resources.pregunta;
+            bad4.Image = launcher_imperivm_iii.Properties.Resources.pregunta;
+            refresh.Image = launcher_imperivm_iii.Properties.Resources.check;
+            this.Refresh();
             bad1.Image = checkPort(myIp.Text,40444);
+            this.Refresh();
             bad2.Image = checkPort(myIp.Text, 40446);
+            this.Refresh();
             bad3.Image = checkPort(myIp.Text, 40445);
+            this.Refresh();
             bad4.Image = checkPort(myIp.Text, 40447);
+            this.Refresh();
+            refresh.Image = launcher_imperivm_iii.Properties.Resources.refresh;
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void pictureBox21_Click(object sender, EventArgs e)
         {
 
         }

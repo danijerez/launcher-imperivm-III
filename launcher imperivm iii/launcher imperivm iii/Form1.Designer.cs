@@ -34,6 +34,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.checkBox1 = new MaterialSkin.Controls.MaterialCheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.myIp = new System.Windows.Forms.Label();
@@ -55,8 +57,7 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.version = new MaterialSkin.Controls.MaterialLabel();
             this.resolution = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.saveButton = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -82,12 +83,13 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -113,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             this.SuspendLayout();
             // 
             // language
@@ -143,6 +146,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.pictureBox20);
             this.tabPage1.Controls.Add(this.saveButton);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.pictureBox2);
@@ -172,14 +176,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Black;
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.bad4);
-            this.tabPage2.Controls.Add(this.bad3);
+            this.tabPage2.Controls.Add(this.pictureBox21);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.refresh);
-            this.tabPage2.Controls.Add(this.bad2);
-            this.tabPage2.Controls.Add(this.bad1);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.myIp);
@@ -191,6 +190,11 @@
             this.tabPage2.Controls.Add(this.buttonAdventures);
             this.tabPage2.Controls.Add(this.buttonConquest);
             this.tabPage2.Controls.Add(this.buttonScenarios);
+            this.tabPage2.Controls.Add(this.bad4);
+            this.tabPage2.Controls.Add(this.bad3);
+            this.tabPage2.Controls.Add(this.refresh);
+            this.tabPage2.Controls.Add(this.bad2);
+            this.tabPage2.Controls.Add(this.bad1);
             this.tabPage2.Controls.Add(this.pictureBox19);
             this.tabPage2.Controls.Add(this.pictureBox18);
             this.tabPage2.Controls.Add(this.pictureBox17);
@@ -206,6 +210,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Utilities";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(213, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 16);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "40447";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(152, 192);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 16);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "40445";
             // 
             // label8
             // 
@@ -226,7 +250,6 @@
             this.label7.Size = new System.Drawing.Size(43, 16);
             this.label7.TabIndex = 39;
             this.label7.Text = "40444";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // myIp
             // 
@@ -461,25 +484,15 @@
             this.resolution.Size = new System.Drawing.Size(86, 22);
             this.resolution.TabIndex = 20;
             // 
-            // label9
+            // pictureBox20
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(213, 191);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 16);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "40447";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(152, 192);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 16);
-            this.label10.TabIndex = 44;
-            this.label10.Text = "40445";
+            this.pictureBox20.Image = global::launcher_imperivm_iii.Properties.Resources.steam;
+            this.pictureBox20.Location = new System.Drawing.Point(301, 189);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(84, 26);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 20;
+            this.pictureBox20.TabStop = false;
             // 
             // saveButton
             // 
@@ -520,7 +533,7 @@
             // bad4
             // 
             this.bad4.Image = global::launcher_imperivm_iii.Properties.Resources.pregunta;
-            this.bad4.Location = new System.Drawing.Point(253, 191);
+            this.bad4.Location = new System.Drawing.Point(255, 191);
             this.bad4.Name = "bad4";
             this.bad4.Size = new System.Drawing.Size(15, 15);
             this.bad4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -530,7 +543,7 @@
             // bad3
             // 
             this.bad3.Image = global::launcher_imperivm_iii.Properties.Resources.pregunta;
-            this.bad3.Location = new System.Drawing.Point(192, 192);
+            this.bad3.Location = new System.Drawing.Point(194, 192);
             this.bad3.Name = "bad3";
             this.bad3.Size = new System.Drawing.Size(15, 15);
             this.bad3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -552,7 +565,7 @@
             // bad2
             // 
             this.bad2.Image = global::launcher_imperivm_iii.Properties.Resources.pregunta;
-            this.bad2.Location = new System.Drawing.Point(253, 173);
+            this.bad2.Location = new System.Drawing.Point(255, 173);
             this.bad2.Name = "bad2";
             this.bad2.Size = new System.Drawing.Size(15, 15);
             this.bad2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -562,7 +575,7 @@
             // bad1
             // 
             this.bad1.Image = global::launcher_imperivm_iii.Properties.Resources.pregunta;
-            this.bad1.Location = new System.Drawing.Point(192, 174);
+            this.bad1.Location = new System.Drawing.Point(194, 174);
             this.bad1.Name = "bad1";
             this.bad1.Size = new System.Drawing.Size(15, 15);
             this.bad1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -725,7 +738,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.soundOn;
+            this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.soundOk;
             this.pictureBox5.Location = new System.Drawing.Point(251, 313);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 21);
@@ -754,15 +767,16 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
-            // label11
+            // pictureBox21
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(306, 180);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 21);
-            this.label11.TabIndex = 48;
-            this.label11.Text = "UPD Ports";
+            this.pictureBox21.Image = global::launcher_imperivm_iii.Properties.Resources.manual;
+            this.pictureBox21.Location = new System.Drawing.Point(314, 174);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 48;
+            this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
             // 
             // Form1
             // 
@@ -794,6 +808,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -819,6 +834,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -878,7 +894,8 @@
         private System.Windows.Forms.PictureBox bad3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox21;
     }
 }
 
