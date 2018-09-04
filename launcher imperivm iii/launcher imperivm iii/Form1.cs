@@ -83,39 +83,8 @@ namespace launcher_imperivm_iii
             parserSettings.SaveSettings();
         }
 
-        public class AutoClosingMessageBox
-        {
-            System.Threading.Timer _timeoutTimer;
-            string _caption;
-            AutoClosingMessageBox(string text, string caption, int timeout)
-            {
-                _caption = caption;
-                _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
-                    null, timeout, System.Threading.Timeout.Infinite);
-                using (_timeoutTimer)
-                    MessageBox.Show(text, caption);
-            }
-            public static void Show(string text, string caption, int timeout)
-            {
-                new AutoClosingMessageBox(text, caption, timeout);
-            }
-            void OnTimerElapsed(object state)
-            {
-                IntPtr mbWnd = FindWindow("#32770", _caption); // lpClassName is #32770 for MessageBox
-                if (mbWnd != IntPtr.Zero)
-                    SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
-                _timeoutTimer.Dispose();
-            }
-            const int WM_CLOSE = 0x0010;
-            [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
-            static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
-            [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
-            static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
             Get_Ip_Address_Load();
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
             simpleSound.PlayLooping();
@@ -166,32 +135,24 @@ namespace launcher_imperivm_iii
 
         }
 
-        public void checkPorts()
+        public Image checkPort(String ip, int port)
         {
+            Cursor.Current = Cursors.WaitCursor;
             using (TcpClient tcpClient = new TcpClient())
             {
+                //40444 40445 40446 40447 UDP
                 try
                 {
-                    tcpClient.Connect(myIp.Text, 40444);
-                    bad1.Image = launcher_imperivm_iii.Properties.Resources.bien;
-                    Console.WriteLine("Port 40444 open");
+                    tcpClient.Connect(ip, port);
+                    Console.WriteLine("Port "+port+" open");
+                    return launcher_imperivm_iii.Properties.Resources.bien;
+                    
                 }
                 catch (Exception)
                 {
-                    bad1.Image = launcher_imperivm_iii.Properties.Resources.mal;
-                    Console.WriteLine("Port 40444 closed");
-                }
-
-                try
-                {
-                    tcpClient.Connect(myIp.Text, 40447);
-                    bad2.Image = launcher_imperivm_iii.Properties.Resources.bien;
-                    Console.WriteLine("Port 40447 open");
-                }
-                catch (Exception)
-                {
-                    bad2.Image = launcher_imperivm_iii.Properties.Resources.mal;
-                    Console.WriteLine("Port 40447 closed");
+                    Console.WriteLine("Port " + port + " closed");
+                    return launcher_imperivm_iii.Properties.Resources.mal;
+                   
                 }
             }
         }
@@ -458,7 +419,7 @@ namespace launcher_imperivm_iii
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             changeLanguageResolution();
-
+            parserLauncher.SaveSettings();
             System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
             if (checkBox1.Checked)
             {
@@ -604,7 +565,15 @@ namespace launcher_imperivm_iii
 
         private void pictureBox20_Click(object sender, EventArgs e)
         {
-            checkPorts();
+            bad1.Image = checkPort(myIp.Text,40444);
+            bad2.Image = checkPort(myIp.Text, 40446);
+            bad3.Image = checkPort(myIp.Text, 40445);
+            bad4.Image = checkPort(myIp.Text, 40447);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

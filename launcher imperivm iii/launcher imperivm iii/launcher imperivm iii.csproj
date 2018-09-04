@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\pregunta.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\mal.png" />
     <None Include="Resources\bien.png" />
