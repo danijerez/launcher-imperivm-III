@@ -4,7 +4,14 @@
 
 [![N|Solid](https://i.imgur.com/ZIKPTi2.png)](https://discord.gg/RErjBq8)  [![N|Solid](https://i.imgur.com/hBSJB6X.png)](https://github.com/fabiomarigo7/imperivm-steam) [![N|Solid](https://i.imgur.com/DOMgrz2.png)](https://twitter.com/d4nijerez)
 
-## Changelog (29/08/2018)
+
+## Changelog (08/09/2018) v1.1
+- check open default ports UPD
+- auto check public/local ip
+- fix minors errors
+- change/add new icons
+
+## Changelog (29/08/2018) v1.0
 - update to .NET Framework 4.7.1.
 - new visual style MaterialSkin.
 - new visual effects and music .

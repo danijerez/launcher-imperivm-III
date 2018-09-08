@@ -45,11 +45,6 @@ namespace launcher_imperivm_iii
                 Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void changeLanguageResolution()
         {
 
@@ -85,8 +80,9 @@ namespace launcher_imperivm_iii
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             Get_Ip_Address_Load();
+            iplocal.Text = GetLocalIPAddress();
             simpleSound = new SoundPlayer(@"Music/launcher.wav");
             simpleSound.PlayLooping();
 
@@ -95,7 +91,7 @@ namespace launcher_imperivm_iii
             {
                 String l = pakLanguages[i].Name.Split('.')[0];
                 language.Items.Add(FirstCharToUpper(l));
-                
+
             }
 
             IniParser parser = new IniParser(@"Settings.ini");
@@ -116,21 +112,8 @@ namespace launcher_imperivm_iii
 
         private void Get_Ip_Address_Load()
         {
-
-            IPHostEntry iph;
-            string myip = "-";
-
             try
             {
-                iph = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (IPAddress ip in iph.AddressList)
-                {
-                    if (ip.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        myip = ip.ToString();
-                    }
-                }
-
                 string externalIP = "";
                 externalIP = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
                 externalIP = (new Regex(@"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}")).Matches(externalIP)[0].ToString();
@@ -152,23 +135,40 @@ namespace launcher_imperivm_iii
             Cursor.Current = new Cursor(((Bitmap)pb.Image).GetHicon());
         }
 
-        public Image checkPort(String ip, int port)
+        public static string GetLocalIPAddress()
         {
-            using (TcpClient tcpClient = new TcpClient())
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            var iplocalcheck = "";
+            foreach (var lastip in host.AddressList)
+            {
+                if (lastip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    iplocalcheck = lastip.ToString();
+                }
+            }
+            return iplocalcheck;
+            //throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
+
+        public Image checkPort(String ip,String iplocal, int port)
+        {
+            
+            using (UdpClient udpClient = new UdpClient())
             {
                 //40444 40445 40446 40447 UDP
                 try
                 {
-                    tcpClient.Connect(ip, port);
+                    udpClient.Connect(ip, port);
+                    udpClient.Connect(iplocal, port);
                     Console.WriteLine("Port " + port + " open");
                     return launcher_imperivm_iii.Properties.Resources.bien;
-                    
+
                 }
                 catch (Exception)
                 {
                     Console.WriteLine("Port " + port + " closed");
                     return launcher_imperivm_iii.Properties.Resources.mal;
-                   
+
                 }
             }
         }
@@ -298,11 +298,6 @@ namespace launcher_imperivm_iii
             saveButton.Image = launcher_imperivm_iii.Properties.Resources.saveOk;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -344,11 +339,6 @@ namespace launcher_imperivm_iii
         private void buttonPacks_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer.exe", @"Packs");
-        }
-
-        private void materialRaisedButton1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
@@ -564,11 +554,6 @@ namespace launcher_imperivm_iii
             System.Diagnostics.Process.Start("https://twitter.com/d4nijerez");
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void myIp_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(myIp.Text);
@@ -588,20 +573,30 @@ namespace launcher_imperivm_iii
             bad4.Image = launcher_imperivm_iii.Properties.Resources.pregunta;
             refresh.Image = launcher_imperivm_iii.Properties.Resources.check;
             this.Refresh();
-            bad1.Image = checkPort(myIp.Text,40444);
+            bad1.Image = checkPort(myIp.Text, iplocal.Text, 40444);
             this.Refresh();
-            bad2.Image = checkPort(myIp.Text, 40446);
+            bad2.Image = checkPort(myIp.Text, iplocal.Text, 40446);
             this.Refresh();
-            bad3.Image = checkPort(myIp.Text, 40445);
+            bad3.Image = checkPort(myIp.Text,iplocal.Text, 40445);
             this.Refresh();
-            bad4.Image = checkPort(myIp.Text, 40447);
+            bad4.Image = checkPort(myIp.Text, iplocal.Text, 40447);
             this.Refresh();
             refresh.Image = launcher_imperivm_iii.Properties.Resources.refresh;
         }
 
         private void pictureBox21_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Process.Start("http://download.fxinteractive.com/FX_Classic_Store_Area/Imperivm-GBR/ES_Manual_Imperivm_GBR.pdf");
+        }
 
+        private void label11_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/danijerez/launcher-imperivm-III");
+        }
+
+        private void pictureBox20_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://store.steampowered.com");
         }
     }
 }
