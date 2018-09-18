@@ -394,6 +394,7 @@ namespace launcher_imperivm_iii
         {
             changeLanguageResolution();
             parserLauncher.SaveSettings();
+            waveOut.Stop();
             if (isSoundPlay)
             {
                 playRandomSound();
