@@ -405,8 +405,10 @@ namespace launcher_imperivm_iii
             }
             processStartInfo.FileName = @"gbr.exe";
             System.Diagnostics.Process.Start(processStartInfo);
-
+            System.Threading.Thread.Sleep(2000);
             Application.Exit();
+            
+            
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
