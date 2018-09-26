@@ -63,6 +63,16 @@ namespace launcher_imperivm_iii.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _220145 {
+            get {
+                object obj = ResourceManager.GetObject("220145", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap adm {
             get {
                 object obj = ResourceManager.GetObject("adm", resourceCulture);

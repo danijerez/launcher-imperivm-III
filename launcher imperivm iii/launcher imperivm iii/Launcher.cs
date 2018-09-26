@@ -31,6 +31,7 @@ namespace launcher_imperivm_iii
         String pathBackground = @"CURRENTLANG/MENUBACKGROUND.BMP";
         String pathImage16_9 = @"CURRENTLANG/menu_16_9.BMP";
         String pathImage4_3 = @"CURRENTLANG/menu_4_3.BMP";
+        String lastUpdate = "update__1_52";
 
         private WaveOut waveOut;
         bool isSoundPlay = true;
@@ -45,7 +46,7 @@ namespace launcher_imperivm_iii
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
+                Primary.Grey700, Primary.Grey900, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
 
         private void changeLanguageResolution()
@@ -221,7 +222,7 @@ namespace launcher_imperivm_iii
 
         private void loadFolderMods()
         {
-            List<string> noMods = new List<string> { "AdditionalArt", "Buildings", "data", "emptyadv", "emptyconquest", "emptyscn", "Fonts", "MapObjects", "Minimap", "newmap", "Outlines", "randommap", "RandomMap", "RandomMapSettlements", "Sounds", "Terrain", "UI", "Units", "Visuals" };
+            List<string> noMods = new List<string> { "AdditionalArt", "Buildings", "data", "emptyadv", "emptyconquest", "emptyscn", "Fonts", "MapObjects", "Minimap", "newmap", "Outlines", "randommap", "RandomMap", "RandomMapSettlements", "Sounds", "Terrain", "UI", "Units", "Visuals", lastUpdate };
             var pakMods = new DirectoryInfo("Packs").GetFiles("*.pak");
             for (int i = 0; i < pakMods.Length; i++)
             {
@@ -599,12 +600,22 @@ namespace launcher_imperivm_iii
 
         private void pictureBox19_Click(object sender, EventArgs e)
         {
-            playRandomSound();
+            
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/fabiomarigo7/imperivm-steam/blob/master/update/changelog.md");
+        }
+
+        private void pictureBox22_Click(object sender, EventArgs e)
+        {
+            playRandomSound();
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/RattlesMake");
         }
     }
 }
