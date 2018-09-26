@@ -77,7 +77,7 @@ namespace launcher_imperivm_iii
             parserConst.AddSetting("Resolutions", "Res1_y", y.ToString());
             lineChanger("Larghezza = " + x, pathTemplate, 2);
             lineChanger("Altezza = " + y, pathTemplate, 3);
-            
+
 
             parserConst.SaveSettings();
             parserSettings.SaveSettings();
@@ -90,7 +90,7 @@ namespace launcher_imperivm_iii
             waveOut = new WaveOut();
             waveOut.Init(loop);
             waveOut.Play();
-           
+
 
             var pakLanguages = new DirectoryInfo("local").GetFiles("*.pak");
             for (int i = 0; i < pakLanguages.Length; i++)
@@ -202,10 +202,10 @@ namespace launcher_imperivm_iii
                 tabPage2.Text = parserLauncher.GetSetting(defaultLanguage, "Page2");
                 tabPage3.Text = parserLauncher.GetSetting(defaultLanguage, "Page3");
                 tabPage4.Text = parserLauncher.GetSetting(defaultLanguage, "Page4");
-                
+
                 volumeSlider1.Volume = float.Parse(parserLauncher.GetSetting("Default", "Volume"));
-                
-                
+
+
 
                 if (parserLauncher.GetSetting("Default", "Admin") == "1")
                 {
@@ -393,24 +393,33 @@ namespace launcher_imperivm_iii
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            changeLanguageResolution();
-            parserLauncher.SaveSettings();
-            waveOut.Stop();
-            if (isSoundPlay)
+
+            try
             {
-                playRandomSound();
+                changeLanguageResolution();
+                parserLauncher.SaveSettings();
+                waveOut.Stop();
+                if (isSoundPlay)
+                {
+                    playRandomSound();
+                }
+                System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
+                if (checkBox1.Checked)
+                {
+                    processStartInfo.Verb = "runas";
+                }
+                processStartInfo.FileName = @"gbr.exe";
+                System.Diagnostics.Process.Start(processStartInfo);
+                System.Threading.Thread.Sleep(6000);
+                Application.Exit();
             }
-            System.Diagnostics.ProcessStartInfo processStartInfo = new System.Diagnostics.ProcessStartInfo();
-            if (checkBox1.Checked)
+            catch
             {
-                processStartInfo.Verb = "runas";
+                System.Windows.Forms.MessageBox.Show("gbr.exe not found", "Error");
             }
-            processStartInfo.FileName = @"gbr.exe";
-            System.Diagnostics.Process.Start(processStartInfo);
-            System.Threading.Thread.Sleep(2000);
-            Application.Exit();
-            
-            
+
+
+
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
@@ -547,7 +556,14 @@ namespace launcher_imperivm_iii
 
         private void pictureBox21_Click_1(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"Multiplayer\vpn-client\vpn.exe");
+            try
+            {
+                System.Diagnostics.Process.Start(@"Multiplayer\vpn-client\vpn.exe");
+            }
+            catch
+            {
+                System.Windows.Forms.MessageBox.Show("vpn.exe not found", "Error");
+            }
         }
 
         private void playRandomSound()
@@ -558,7 +574,7 @@ namespace launcher_imperivm_iii
             {
                 l = "Italian";
             }
-            String directory = "Local\\" + l + "\\CURRENTLANG\\VOICES\\";
+            String directory = "Local\\" + l;
             ProcessDirectory(directory);
             outputDevice = new WaveOutEvent();
             Random random = new Random();
@@ -589,7 +605,7 @@ namespace launcher_imperivm_iii
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void volumeSlider1_VolumeChanged(object sender, EventArgs e)
@@ -600,7 +616,7 @@ namespace launcher_imperivm_iii
 
         private void pictureBox19_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -611,6 +627,44 @@ namespace launcher_imperivm_iii
         private void pictureBox22_Click(object sender, EventArgs e)
         {
             playRandomSound();
+
+            Thread th1 = new Thread(new ThreadStart(randomColorImg));
+            th1.Start();
+
+
+        }
+
+        public void randomColorImg()
+        {
+            Random rnd = new Random();
+            Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            Image img = ChangeColor((Bitmap)rattlesMake.Image, randomColor);
+            this.Invoke((MethodInvoker)delegate ()
+            {
+                rattlesMake.Image = img;
+            });
+        }
+
+        public static Bitmap ChangeColor(Bitmap scrBitmap, Color color)
+        {
+            //You can change your new color here. Red,Green,LawnGreen any..
+            Color actualColor;
+            //make an empty bitmap the same size as scrBitmap
+            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+            for (int i = 0; i < scrBitmap.Width; i++)
+            {
+                for (int j = 0; j < scrBitmap.Height; j++)
+                {
+                    //get the pixel from the scrBitmap image
+                    actualColor = scrBitmap.GetPixel(i, j);
+                    // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
+                    if (actualColor.A > 150)
+                        newBitmap.SetPixel(i, j, color);
+                    else
+                        newBitmap.SetPixel(i, j, actualColor);
+                }
+            }
+            return newBitmap;
         }
 
         private void label19_Click(object sender, EventArgs e)

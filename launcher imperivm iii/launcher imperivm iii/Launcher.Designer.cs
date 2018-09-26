@@ -57,7 +57,8 @@
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.listMods = new System.Windows.Forms.CheckedListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.rattlesMake = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -87,7 +88,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -106,7 +106,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -468,7 +468,7 @@
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Black;
             this.tabPage4.Controls.Add(this.label19);
-            this.tabPage4.Controls.Add(this.pictureBox22);
+            this.tabPage4.Controls.Add(this.rattlesMake);
             this.tabPage4.Controls.Add(this.label17);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.pictureBox12);
@@ -495,17 +495,30 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Credits";
             // 
-            // pictureBox22
+            // label19
             // 
-            this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox22.Image = global::launcher_imperivm_iii.Properties.Resources._220145;
-            this.pictureBox22.Location = new System.Drawing.Point(135, 169);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox22.TabIndex = 49;
-            this.pictureBox22.TabStop = false;
-            this.pictureBox22.Click += new System.EventHandler(this.pictureBox22_Click);
+            this.label19.AutoSize = true;
+            this.label19.Cursor = System.Windows.Forms.Cursors.Help;
+            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(14, 204);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(121, 16);
+            this.label19.TabIndex = 50;
+            this.label19.Text = "Team RattlesMake";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // rattlesMake
+            // 
+            this.rattlesMake.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rattlesMake.Image = global::launcher_imperivm_iii.Properties.Resources._220145;
+            this.rattlesMake.Location = new System.Drawing.Point(135, 169);
+            this.rattlesMake.Name = "rattlesMake";
+            this.rattlesMake.Size = new System.Drawing.Size(50, 50);
+            this.rattlesMake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rattlesMake.TabIndex = 49;
+            this.rattlesMake.TabStop = false;
+            this.rattlesMake.Click += new System.EventHandler(this.pictureBox22_Click);
             // 
             // label17
             // 
@@ -700,7 +713,7 @@
             this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.haemimont;
             this.pictureBox14.Location = new System.Drawing.Point(191, 194);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(60, 23);
+            this.pictureBox14.Size = new System.Drawing.Size(65, 23);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 31;
             this.pictureBox14.TabStop = false;
@@ -708,7 +721,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = global::launcher_imperivm_iii.Properties.Resources.fx;
-            this.pictureBox13.Location = new System.Drawing.Point(259, 196);
+            this.pictureBox13.Location = new System.Drawing.Point(260, 196);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(34, 19);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -829,19 +842,6 @@
             this.pictureBox3.TabIndex = 19;
             this.pictureBox3.TabStop = false;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(14, 204);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(125, 16);
-            this.label19.TabIndex = 50;
-            this.label19.Text = "Team Rattles Make";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -888,7 +888,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -961,7 +961,7 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.PictureBox rattlesMake;
         private System.Windows.Forms.Label label19;
     }
 }
