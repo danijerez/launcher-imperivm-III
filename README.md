@@ -4,6 +4,13 @@
 
 [![N|Solid](https://i.imgur.com/ZIKPTi2.png)](https://discord.gg/RErjBq8)  [![N|Solid](https://i.imgur.com/hBSJB6X.png)](https://github.com/fabiomarigo7/imperivm-steam) [![N|Solid](https://i.imgur.com/DOMgrz2.png)](https://twitter.com/d4nijerez)
 
+## Changelog (27/09/2018) v1.3
+- delete checks ports UPD (it was not reliable)
+- fix minors errors
+- new driver audio
+- add easter egg RattlesMake
+- sound slider
+- new effects and icons
 
 ## Changelog (08/09/2018) v1.2
 - check open default ports UPD
