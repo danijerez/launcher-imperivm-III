@@ -46,7 +46,7 @@ namespace launcher_imperivm_iii
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey700, Primary.Grey900, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
+                Primary.Grey900, Primary.Grey900, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
 
         private void changeLanguageResolution()
@@ -670,6 +670,35 @@ namespace launcher_imperivm_iii
         private void label19_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://twitter.com/RattlesMake");
+        }
+
+        private void pictureBox21_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox21.Image = launcher_imperivm_iii.Properties.Resources.online2;
+            pictureBox19.Image = launcher_imperivm_iii.Properties.Resources.arrow2Y;
+            pictureBox22.Image = launcher_imperivm_iii.Properties.Resources.arrow3Y;
+        }
+
+        private void pictureBox21_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox21.Image = launcher_imperivm_iii.Properties.Resources.online;
+            pictureBox19.Image = launcher_imperivm_iii.Properties.Resources.arrow2;
+            pictureBox22.Image = launcher_imperivm_iii.Properties.Resources.arrow3;
+        }
+
+        private void pictureBox24_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/RattlesMake");
+        }
+
+        private void pictureBox25_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://discord.gg/RErjBq8");
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/danijerez/launcher-imperivm-III");
         }
     }
 }
