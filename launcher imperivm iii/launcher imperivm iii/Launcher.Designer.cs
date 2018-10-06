@@ -31,7 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.saveButton = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new MaterialSkin.Controls.MaterialCheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,7 +51,15 @@
             this.buttonAdventures = new System.Windows.Forms.Button();
             this.buttonConquest = new System.Windows.Forms.Button();
             this.buttonScenarios = new System.Windows.Forms.Button();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.listMods = new System.Windows.Forms.CheckedListBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
@@ -58,41 +76,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.rattlesMake = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.volumeSlider1 = new NAudio.Gui.VolumeSlider();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.label11 = new System.Windows.Forms.Label();
             this.language = new System.Windows.Forms.ComboBox();
             this.resolution = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.saveButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.rattlesMake = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
@@ -103,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -110,7 +108,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -157,11 +157,107 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
             // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox23.Image = global::launcher_imperivm_iii.Properties.Resources.github;
+            this.pictureBox23.Location = new System.Drawing.Point(363, 209);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 49;
+            this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox24.Image = global::launcher_imperivm_iii.Properties.Resources.twitter;
+            this.pictureBox24.Location = new System.Drawing.Point(340, 209);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 48;
+            this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox25.Image = global::launcher_imperivm_iii.Properties.Resources.discord;
+            this.pictureBox25.Location = new System.Drawing.Point(317, 209);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 47;
+            this.pictureBox25.TabStop = false;
+            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox22.Image = global::launcher_imperivm_iii.Properties.Resources.arrow3;
+            this.pictureBox22.Location = new System.Drawing.Point(282, 199);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox22.TabIndex = 23;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox19.Image = global::launcher_imperivm_iii.Properties.Resources.arrow2;
+            this.pictureBox19.Location = new System.Drawing.Point(87, 198);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 22;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox21.Image = global::launcher_imperivm_iii.Properties.Resources.online;
+            this.pictureBox21.Location = new System.Drawing.Point(112, 193);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(170, 33);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 21;
+            this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click_1);
+            this.pictureBox21.MouseEnter += new System.EventHandler(this.pictureBox21_MouseEnter);
+            this.pictureBox21.MouseLeave += new System.EventHandler(this.pictureBox21_MouseLeave);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Help;
+            this.pictureBox20.Image = global::launcher_imperivm_iii.Properties.Resources.steam;
+            this.pictureBox20.Location = new System.Drawing.Point(326, 166);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(59, 19);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 20;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click_1);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.saveButton.Image = global::launcher_imperivm_iii.Properties.Resources.save;
+            this.saveButton.Location = new System.Drawing.Point(59, 209);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(20, 20);
+            this.saveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.saveButton.TabIndex = 19;
+            this.saveButton.TabStop = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Depth = 0;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBox1.Font = new System.Drawing.Font("Roboto", 10F);
             this.checkBox1.Location = new System.Drawing.Point(29, 204);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -171,6 +267,30 @@
             this.checkBox1.Size = new System.Drawing.Size(26, 30);
             this.checkBox1.TabIndex = 11;
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
+            this.pictureBox2.Location = new System.Drawing.Point(6, 205);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(379, 179);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // tabPage2
             // 
@@ -299,6 +419,81 @@
             this.buttonScenarios.UseVisualStyleBackColor = false;
             this.buttonScenarios.Click += new System.EventHandler(this.buttonScenarios_Click);
             // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox18.Image = global::launcher_imperivm_iii.Properties.Resources.menos;
+            this.pictureBox18.Location = new System.Drawing.Point(351, 175);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 36;
+            this.pictureBox18.TabStop = false;
+            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox17.Image = global::launcher_imperivm_iii.Properties.Resources.mas;
+            this.pictureBox17.Location = new System.Drawing.Point(315, 175);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 34;
+            this.pictureBox17.TabStop = false;
+            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = global::launcher_imperivm_iii.Properties.Resources.res;
+            this.pictureBox16.Location = new System.Drawing.Point(117, 179);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(24, 21);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox16.TabIndex = 23;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::launcher_imperivm_iii.Properties.Resources.reanudar;
+            this.pictureBox9.Location = new System.Drawing.Point(207, 101);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 29;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.conquest;
+            this.pictureBox8.Location = new System.Drawing.Point(23, 101);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 28;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.adventure;
+            this.pictureBox7.Location = new System.Drawing.Point(207, 41);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::launcher_imperivm_iii.Properties.Resources.mapa;
+            this.pictureBox6.Location = new System.Drawing.Point(23, 41);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 26;
+            this.pictureBox6.TabStop = false;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.pictureBox15);
@@ -310,6 +505,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODs";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox15.Image = global::launcher_imperivm_iii.Properties.Resources.carpeta;
+            this.pictureBox15.Location = new System.Drawing.Point(349, 179);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.TabIndex = 30;
+            this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
             // 
             // listMods
             // 
@@ -505,6 +712,38 @@
             this.label1.Text = "Main Programmers";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // rattlesMake
+            // 
+            this.rattlesMake.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rattlesMake.Image = global::launcher_imperivm_iii.Properties.Resources.rts_make;
+            this.rattlesMake.Location = new System.Drawing.Point(339, 190);
+            this.rattlesMake.Name = "rattlesMake";
+            this.rattlesMake.Size = new System.Drawing.Size(50, 50);
+            this.rattlesMake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rattlesMake.TabIndex = 49;
+            this.rattlesMake.TabStop = false;
+            this.rattlesMake.Click += new System.EventHandler(this.pictureBox22_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.haemimont;
+            this.pictureBox14.Location = new System.Drawing.Point(191, 194);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(65, 23);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 31;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::launcher_imperivm_iii.Properties.Resources.fx;
+            this.pictureBox13.Location = new System.Drawing.Point(260, 196);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(34, 19);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.TabIndex = 30;
+            this.pictureBox13.TabStop = false;
+            // 
             // volumeSlider1
             // 
             this.volumeSlider1.BackColor = System.Drawing.Color.Transparent;
@@ -536,7 +775,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(18, 8);
             this.label11.TabIndex = 50;
-            this.label11.Text = "v1.3";
+            this.label11.Text = "v1.4";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // language
@@ -572,245 +811,6 @@
             this.label7.TabIndex = 51;
             this.label7.Text = "Beta v1.52";
             this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox23.Image = global::launcher_imperivm_iii.Properties.Resources.github;
-            this.pictureBox23.Location = new System.Drawing.Point(363, 209);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox23.TabIndex = 49;
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox24.Image = global::launcher_imperivm_iii.Properties.Resources.twitter;
-            this.pictureBox24.Location = new System.Drawing.Point(340, 209);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox24.TabIndex = 48;
-            this.pictureBox24.TabStop = false;
-            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox25.Image = global::launcher_imperivm_iii.Properties.Resources.discord;
-            this.pictureBox25.Location = new System.Drawing.Point(317, 209);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 47;
-            this.pictureBox25.TabStop = false;
-            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox22.Image = global::launcher_imperivm_iii.Properties.Resources.arrow3;
-            this.pictureBox22.Location = new System.Drawing.Point(282, 199);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox22.TabIndex = 23;
-            this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox19.Image = global::launcher_imperivm_iii.Properties.Resources.arrow2;
-            this.pictureBox19.Location = new System.Drawing.Point(87, 198);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 22;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox21.Image = global::launcher_imperivm_iii.Properties.Resources.online;
-            this.pictureBox21.Location = new System.Drawing.Point(112, 193);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(170, 33);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 21;
-            this.pictureBox21.TabStop = false;
-            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click_1);
-            this.pictureBox21.MouseEnter += new System.EventHandler(this.pictureBox21_MouseEnter);
-            this.pictureBox21.MouseLeave += new System.EventHandler(this.pictureBox21_MouseLeave);
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Help;
-            this.pictureBox20.Image = global::launcher_imperivm_iii.Properties.Resources.steam;
-            this.pictureBox20.Location = new System.Drawing.Point(326, 166);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(59, 19);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 20;
-            this.pictureBox20.TabStop = false;
-            this.pictureBox20.Click += new System.EventHandler(this.pictureBox20_Click_1);
-            // 
-            // saveButton
-            // 
-            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.saveButton.Image = global::launcher_imperivm_iii.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(59, 209);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(20, 20);
-            this.saveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.saveButton.TabIndex = 19;
-            this.saveButton.TabStop = false;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 205);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 179);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox18.Image = global::launcher_imperivm_iii.Properties.Resources.menos;
-            this.pictureBox18.Location = new System.Drawing.Point(351, 175);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(30, 29);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox18.TabIndex = 36;
-            this.pictureBox18.TabStop = false;
-            this.pictureBox18.Click += new System.EventHandler(this.pictureBox18_Click);
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox17.Image = global::launcher_imperivm_iii.Properties.Resources.mas;
-            this.pictureBox17.Location = new System.Drawing.Point(315, 175);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(30, 29);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 34;
-            this.pictureBox17.TabStop = false;
-            this.pictureBox17.Click += new System.EventHandler(this.pictureBox17_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.Image = global::launcher_imperivm_iii.Properties.Resources.res;
-            this.pictureBox16.Location = new System.Drawing.Point(117, 179);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(24, 21);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox16.TabIndex = 23;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::launcher_imperivm_iii.Properties.Resources.reanudar;
-            this.pictureBox9.Location = new System.Drawing.Point(207, 101);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 29;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::launcher_imperivm_iii.Properties.Resources.conquest;
-            this.pictureBox8.Location = new System.Drawing.Point(23, 101);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 28;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::launcher_imperivm_iii.Properties.Resources.adventure;
-            this.pictureBox7.Location = new System.Drawing.Point(207, 41);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 27;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::launcher_imperivm_iii.Properties.Resources.mapa;
-            this.pictureBox6.Location = new System.Drawing.Point(23, 41);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 51);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 26;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox15.Image = global::launcher_imperivm_iii.Properties.Resources.carpeta;
-            this.pictureBox15.Location = new System.Drawing.Point(349, 179);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(35, 34);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox15.TabIndex = 30;
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
-            // 
-            // rattlesMake
-            // 
-            this.rattlesMake.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rattlesMake.Image = global::launcher_imperivm_iii.Properties.Resources.rts_make;
-            this.rattlesMake.Location = new System.Drawing.Point(339, 190);
-            this.rattlesMake.Name = "rattlesMake";
-            this.rattlesMake.Size = new System.Drawing.Size(50, 50);
-            this.rattlesMake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rattlesMake.TabIndex = 49;
-            this.rattlesMake.TabStop = false;
-            this.rattlesMake.Click += new System.EventHandler(this.pictureBox22_Click);
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::launcher_imperivm_iii.Properties.Resources.haemimont;
-            this.pictureBox14.Location = new System.Drawing.Point(191, 194);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(65, 23);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 31;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::launcher_imperivm_iii.Properties.Resources.fx;
-            this.pictureBox13.Location = new System.Drawing.Point(260, 196);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(34, 19);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox13.TabIndex = 30;
-            this.pictureBox13.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -873,11 +873,6 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
@@ -888,6 +883,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.saveButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
@@ -895,7 +892,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
