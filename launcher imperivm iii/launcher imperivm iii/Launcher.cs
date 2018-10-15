@@ -17,10 +17,12 @@ using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System.Text;
 using System.Threading;
+using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace launcher_imperivm_iii
 {
-    public partial class Launcher : MaterialForm
+    public partial class Launcher : Form
     {
 
         IniParser parserSettings = new IniParser(@"Settings.ini");
@@ -42,11 +44,6 @@ namespace launcher_imperivm_iii
         public Launcher()
         {
             InitializeComponent();
-            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Grey900, Primary.Grey900, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
         }
 
         private void changeLanguageResolution()
@@ -83,8 +80,26 @@ namespace launcher_imperivm_iii
             parserSettings.SaveSettings();
         }
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = label1;
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Grey700, Primary.Grey700, Primary.Grey500, Accent.Amber200, TextShade.WHITE);
             WaveFileReader reader = new WaveFileReader(@"Music\launcher.wav");
             LoopStream loop = new LoopStream(reader);
             waveOut = new WaveOut();
@@ -352,48 +367,19 @@ namespace launcher_imperivm_iii
             System.Diagnostics.Process.Start("explorer.exe", @"Packs");
         }
 
-        public static Bitmap AdjustBrightness(Bitmap Image, int Value)
-        {
-            System.Drawing.Bitmap TempBitmap = Image;
-            float FinalValue = (float)Value / 255.0f;
-            System.Drawing.Bitmap NewBitmap = new System.Drawing.Bitmap(TempBitmap.Width, TempBitmap.Height);
-            System.Drawing.Graphics NewGraphics = System.Drawing.Graphics.FromImage(NewBitmap);
-            float[][] FloatColorMatrix ={
-                      new float[] {1, 0, 0, 0, 0},
-                      new float[] {0, 1, 0, 0, 0},
-                      new float[] {0, 0, 1, 0, 0},
-                      new float[] {0, 0, 0, 1, 0},
-                      new float[] {FinalValue, FinalValue, FinalValue, 1, 1}
-                 };
-
-            System.Drawing.Imaging.ColorMatrix NewColorMatrix = new System.Drawing.Imaging.ColorMatrix(FloatColorMatrix);
-            System.Drawing.Imaging.ImageAttributes Attributes = new System.Drawing.Imaging.ImageAttributes();
-            Attributes.SetColorMatrix(NewColorMatrix);
-            NewGraphics.DrawImage(TempBitmap, new System.Drawing.Rectangle(0, 0, TempBitmap.Width, TempBitmap.Height), 0, 0, TempBitmap.Width, TempBitmap.Height, System.Drawing.GraphicsUnit.Pixel, Attributes);
-            Attributes.Dispose();
-            NewGraphics.Dispose();
-            return NewBitmap;
-        }
-
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            Bitmap img = launcher_imperivm_iii.Properties.Resources.logoPlay;
-            img.MakeTransparent(img.GetPixel(0, 0));
-            pictureBox1.Image = AdjustBrightness(img, 50);
-            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = launcher_imperivm_iii.Properties.Resources.logo2;
         }
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            Bitmap img = launcher_imperivm_iii.Properties.Resources.logoPlay;
-            img.MakeTransparent(img.GetPixel(0, 0));
-            pictureBox1.Image = img;
-            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = launcher_imperivm_iii.Properties.Resources.logoPlay;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            string path = System.AppDomain.CurrentDomain.BaseDirectory;
             try
             {
                 changeLanguageResolution();
@@ -408,14 +394,32 @@ namespace launcher_imperivm_iii
                 {
                     processStartInfo.Verb = "runas";
                 }
-                processStartInfo.FileName = @"gbr.exe";
+
+                processStartInfo.FileName = path + "\\gbr.exe";
                 System.Diagnostics.Process.Start(processStartInfo);
                 System.Threading.Thread.Sleep(6000);
                 Application.Exit();
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show("gbr.exe not found", "Error");
+                List<string> dirs = new List<string>(Directory.EnumerateDirectories(path));
+                string folders = "FOLDERS\n\n";
+                foreach (var dir in dirs)
+                {
+                    folders += dir.Substring(dir.LastIndexOf("\\") + 1) + "\n";
+                }
+
+                string filesNames = "\nFILES\n\n";
+                DirectoryInfo d = new DirectoryInfo(path);
+                FileInfo[] Files = d.GetFiles("*"); //Getting Text files
+                foreach (FileInfo file in Files)
+                {
+                    filesNames += file.Name + "\n";
+                }
+
+
+                System.Windows.Forms.MessageBox.Show("gbr.exe not found in path: " + path, "Error");
+                System.Windows.Forms.MessageBox.Show(folders + filesNames, "Info");
             }
 
 
@@ -556,13 +560,16 @@ namespace launcher_imperivm_iii
 
         private void pictureBox21_Click_1(object sender, EventArgs e)
         {
+            string path = System.AppDomain.CurrentDomain.BaseDirectory;
             try
             {
-                System.Diagnostics.Process.Start(@"Multiplayer\vpn-client\vpn.exe");
+
+                System.Diagnostics.Process.Start(path + "\\Multiplayer\\vpn-client\\vpn.exe");
             }
             catch
             {
-                System.Windows.Forms.MessageBox.Show("vpn.exe not found", "Error");
+                Console.WriteLine();
+                System.Windows.Forms.MessageBox.Show("vpn.exe not found in path: " + path, "Error");
             }
         }
 
@@ -599,7 +606,7 @@ namespace launcher_imperivm_iii
         // Insert logic for processing found files here.
         public void ProcessFile(string path)
         {
-            Console.WriteLine(path);
+            //Console.WriteLine(path);
             audioFiles.Add(path);
         }
 
@@ -699,6 +706,74 @@ namespace launcher_imperivm_iii
         private void pictureBox23_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/danijerez/launcher-imperivm-III");
+        }
+
+        private void bar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBox10_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        int mov;
+        int movX;
+        int movY;
+
+        private void Launcher_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void Launcher_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void Launcher_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void pictureBox10_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox10.Image = launcher_imperivm_iii.Properties.Resources.minimize2;
+        }
+
+        private void pictureBox10_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox10.Image = launcher_imperivm_iii.Properties.Resources.minimize;
+        }
+
+        private void pictureBox11_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox11.Image = launcher_imperivm_iii.Properties.Resources.exit2;
+        }
+
+        private void pictureBox11_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox11.Image = launcher_imperivm_iii.Properties.Resources.exit;
+        }
+
+
+        Color color = Color.Black;
+        private void Launcher_Paint(object sender, PaintEventArgs e)
+        {
+            Rectangle rect = new Rectangle(3, 3, this.ClientRectangle.Width - 6, this.ClientRectangle.Height - 6);
+            e.Graphics.DrawRectangle(new Pen(color, 6), rect);
+            e.Graphics.FillRectangle(new SolidBrush(color), 0, 0, this.ClientRectangle.Width, 32);
         }
     }
 }

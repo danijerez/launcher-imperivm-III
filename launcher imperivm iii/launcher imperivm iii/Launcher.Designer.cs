@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
@@ -81,18 +78,19 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.volumeSlider1 = new NAudio.Gui.VolumeSlider();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.label11 = new System.Windows.Forms.Label();
             this.language = new System.Windows.Forms.ComboBox();
             this.resolution = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -114,6 +112,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,27 +124,22 @@
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
             this.materialTabControl1.Controls.Add(this.tabPage3);
             this.materialTabControl1.Controls.Add(this.tabPage4);
             this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Location = new System.Drawing.Point(12, 67);
+            this.materialTabControl1.Location = new System.Drawing.Point(7, 60);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(400, 244);
+            this.materialTabControl1.Size = new System.Drawing.Size(393, 244);
             this.materialTabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.pictureBox23);
-            this.tabPage1.Controls.Add(this.pictureBox24);
-            this.tabPage1.Controls.Add(this.pictureBox25);
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.tabPage1.Controls.Add(this.pictureBox22);
             this.tabPage1.Controls.Add(this.pictureBox19);
             this.tabPage1.Controls.Add(this.pictureBox21);
@@ -153,51 +151,15 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(392, 218);
+            this.tabPage1.Size = new System.Drawing.Size(385, 218);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "General";
-            // 
-            // pictureBox23
-            // 
-            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox23.Image = global::launcher_imperivm_iii.Properties.Resources.github;
-            this.pictureBox23.Location = new System.Drawing.Point(363, 209);
-            this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox23.TabIndex = 49;
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
-            // 
-            // pictureBox24
-            // 
-            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox24.Image = global::launcher_imperivm_iii.Properties.Resources.twitter;
-            this.pictureBox24.Location = new System.Drawing.Point(340, 209);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox24.TabIndex = 48;
-            this.pictureBox24.TabStop = false;
-            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox25.Image = global::launcher_imperivm_iii.Properties.Resources.discord;
-            this.pictureBox25.Location = new System.Drawing.Point(317, 209);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox25.TabIndex = 47;
-            this.pictureBox25.TabStop = false;
-            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
             // 
             // pictureBox22
             // 
             this.pictureBox22.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox22.Image = global::launcher_imperivm_iii.Properties.Resources.arrow3;
-            this.pictureBox22.Location = new System.Drawing.Point(282, 199);
+            this.pictureBox22.Location = new System.Drawing.Point(282, 205);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(25, 25);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +170,7 @@
             // 
             this.pictureBox19.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox19.Image = global::launcher_imperivm_iii.Properties.Resources.arrow2;
-            this.pictureBox19.Location = new System.Drawing.Point(87, 198);
+            this.pictureBox19.Location = new System.Drawing.Point(87, 204);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(25, 25);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,9 +179,10 @@
             // 
             // pictureBox21
             // 
+            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox21.Image = global::launcher_imperivm_iii.Properties.Resources.online;
-            this.pictureBox21.Location = new System.Drawing.Point(112, 193);
+            this.pictureBox21.Location = new System.Drawing.Point(112, 199);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(170, 33);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,9 +194,10 @@
             // 
             // pictureBox20
             // 
+            this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox20.Cursor = System.Windows.Forms.Cursors.Help;
             this.pictureBox20.Image = global::launcher_imperivm_iii.Properties.Resources.steam;
-            this.pictureBox20.Location = new System.Drawing.Point(326, 166);
+            this.pictureBox20.Location = new System.Drawing.Point(318, 208);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(59, 19);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -245,7 +209,7 @@
             // 
             this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveButton.Image = global::launcher_imperivm_iii.Properties.Resources.save;
-            this.saveButton.Location = new System.Drawing.Point(59, 209);
+            this.saveButton.Location = new System.Drawing.Point(59, 207);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(20, 20);
             this.saveButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -258,7 +222,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Depth = 0;
             this.checkBox1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.checkBox1.Location = new System.Drawing.Point(29, 204);
+            this.checkBox1.Location = new System.Drawing.Point(29, 202);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
             this.checkBox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.checkBox1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -271,7 +235,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::launcher_imperivm_iii.Properties.Resources.adm;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 205);
+            this.pictureBox2.Location = new System.Drawing.Point(6, 203);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,11 +244,12 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::launcher_imperivm_iii.Properties.Resources.logoPlay;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -20);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(379, 179);
+            this.pictureBox1.Size = new System.Drawing.Size(397, 230);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -294,7 +259,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.resY);
@@ -313,7 +278,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(392, 218);
+            this.tabPage2.Size = new System.Drawing.Size(388, 218);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Utilities";
             // 
@@ -496,21 +461,21 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.tabPage3.Controls.Add(this.pictureBox15);
             this.tabPage3.Controls.Add(this.listMods);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(392, 218);
+            this.tabPage3.Size = new System.Drawing.Size(385, 218);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MODs";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // pictureBox15
             // 
             this.pictureBox15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox15.Image = global::launcher_imperivm_iii.Properties.Resources.carpeta;
-            this.pictureBox15.Location = new System.Drawing.Point(349, 179);
+            this.pictureBox15.Location = new System.Drawing.Point(348, 182);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(35, 34);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -524,7 +489,7 @@
             this.listMods.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listMods.ForeColor = System.Drawing.Color.White;
             this.listMods.FormattingEnabled = true;
-            this.listMods.Location = new System.Drawing.Point(6, 6);
+            this.listMods.Location = new System.Drawing.Point(5, 7);
             this.listMods.Name = "listMods";
             this.listMods.Size = new System.Drawing.Size(383, 212);
             this.listMods.TabIndex = 12;
@@ -532,7 +497,7 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.Black;
+            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.tabPage4.Controls.Add(this.label17);
             this.tabPage4.Controls.Add(this.label18);
             this.tabPage4.Controls.Add(this.label16);
@@ -553,7 +518,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(392, 218);
+            this.tabPage4.Size = new System.Drawing.Size(388, 218);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Credits";
             // 
@@ -716,9 +681,9 @@
             // 
             this.rattlesMake.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rattlesMake.Image = global::launcher_imperivm_iii.Properties.Resources.rts_make;
-            this.rattlesMake.Location = new System.Drawing.Point(339, 190);
+            this.rattlesMake.Location = new System.Drawing.Point(330, 190);
             this.rattlesMake.Name = "rattlesMake";
-            this.rattlesMake.Size = new System.Drawing.Size(50, 50);
+            this.rattlesMake.Size = new System.Drawing.Size(60, 60);
             this.rattlesMake.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.rattlesMake.TabIndex = 49;
             this.rattlesMake.TabStop = false;
@@ -748,7 +713,7 @@
             // 
             this.volumeSlider1.BackColor = System.Drawing.Color.Transparent;
             this.volumeSlider1.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.volumeSlider1.Location = new System.Drawing.Point(278, 317);
+            this.volumeSlider1.Location = new System.Drawing.Point(268, 308);
             this.volumeSlider1.Name = "volumeSlider1";
             this.volumeSlider1.Size = new System.Drawing.Size(130, 12);
             this.volumeSlider1.TabIndex = 37;
@@ -758,32 +723,19 @@
             // 
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Location = new System.Drawing.Point(5, 27);
+            this.materialTabSelector1.Location = new System.Drawing.Point(-2, 26);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(407, 33);
+            this.materialTabSelector1.Size = new System.Drawing.Size(415, 33);
             this.materialTabSelector1.TabIndex = 8;
             this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Cursor = System.Windows.Forms.Cursors.Help;
-            this.label11.Font = new System.Drawing.Font("Microsoft Tai Le", 5.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(394, 332);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 8);
-            this.label11.TabIndex = 50;
-            this.label11.Text = "v1.4";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // language
             // 
             this.language.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.language.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.language.FormattingEnabled = true;
-            this.language.Location = new System.Drawing.Point(39, 313);
+            this.language.Location = new System.Drawing.Point(34, 304);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(86, 22);
             this.language.TabIndex = 3;
@@ -794,7 +746,7 @@
             this.resolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resolution.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resolution.FormattingEnabled = true;
-            this.resolution.Location = new System.Drawing.Point(159, 313);
+            this.resolution.Location = new System.Drawing.Point(154, 304);
             this.resolution.Name = "resolution";
             this.resolution.Size = new System.Drawing.Size(86, 22);
             this.resolution.TabIndex = 20;
@@ -805,18 +757,87 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Cursor = System.Windows.Forms.Cursors.Help;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(314, 6);
+            this.label7.Location = new System.Drawing.Point(320, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 51;
             this.label7.Text = "Beta v1.52";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // pictureBox23
+            // 
+            this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox23.Image = global::launcher_imperivm_iii.Properties.Resources.github;
+            this.pictureBox23.Location = new System.Drawing.Point(53, 3);
+            this.pictureBox23.Name = "pictureBox23";
+            this.pictureBox23.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 49;
+            this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox24.Image = global::launcher_imperivm_iii.Properties.Resources.twitter;
+            this.pictureBox24.Location = new System.Drawing.Point(30, 3);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 48;
+            this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.pictureBox24_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox11.Image = global::launcher_imperivm_iii.Properties.Resources.exit;
+            this.pictureBox11.Location = new System.Drawing.Point(388, 5);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 52;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click_1);
+            this.pictureBox11.MouseEnter += new System.EventHandler(this.pictureBox11_MouseEnter);
+            this.pictureBox11.MouseLeave += new System.EventHandler(this.pictureBox11_MouseLeave);
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox25.Image = global::launcher_imperivm_iii.Properties.Resources.discord;
+            this.pictureBox25.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 47;
+            this.pictureBox25.TabStop = false;
+            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox10.Image = global::launcher_imperivm_iii.Properties.Resources.minimize;
+            this.pictureBox10.Location = new System.Drawing.Point(370, 5);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 50;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click_1);
+            this.pictureBox10.MouseEnter += new System.EventHandler(this.pictureBox10_MouseEnter);
+            this.pictureBox10.MouseLeave += new System.EventHandler(this.pictureBox10_MouseLeave);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::launcher_imperivm_iii.Properties.Resources.soundOk;
-            this.pictureBox5.Location = new System.Drawing.Point(251, 313);
+            this.pictureBox5.Location = new System.Drawing.Point(244, 304);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(21, 21);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -828,7 +849,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::launcher_imperivm_iii.Properties.Resources.lan;
-            this.pictureBox4.Location = new System.Drawing.Point(14, 313);
+            this.pictureBox4.Location = new System.Drawing.Point(9, 304);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(21, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -839,7 +860,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::launcher_imperivm_iii.Properties.Resources.res;
-            this.pictureBox3.Location = new System.Drawing.Point(131, 314);
+            this.pictureBox3.Location = new System.Drawing.Point(126, 305);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -850,12 +871,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(417, 341);
+            this.ClientSize = new System.Drawing.Size(408, 339);
+            this.Controls.Add(this.pictureBox23);
+            this.Controls.Add(this.pictureBox24);
+            this.Controls.Add(this.pictureBox11);
+            this.Controls.Add(this.pictureBox25);
+            this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.volumeSlider1);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.materialTabControl1);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -864,18 +889,19 @@
             this.Controls.Add(this.materialTabSelector1);
             this.Controls.Add(this.language);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Launcher";
-            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Launcher_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Launcher_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Launcher_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Launcher_MouseUp);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
@@ -899,6 +925,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rattlesMake)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -943,14 +974,12 @@
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox saveButton;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.ComboBox language;
         private System.Windows.Forms.ComboBox resolution;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private NAudio.Gui.VolumeSlider volumeSlider1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -967,6 +996,9 @@
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.PictureBox pictureBox24;
         private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }
 

@@ -124,6 +124,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="Resources\logo2.png" />
+    <None Include="Resources\minimize2.png" />
+    <None Include="Resources\exit2.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\exit.png" />
     <None Include="Resources\twitter.png" />
     <None Include="Resources\rts_make.png" />
     <None Include="Resources\arrow3Y.gif" />
