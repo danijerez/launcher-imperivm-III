@@ -237,7 +237,7 @@ namespace launcher_imperivm_iii
 
         private void loadFolderMods()
         {
-            List<string> noMods = new List<string> { "AdditionalArt", "Buildings", "data", "emptyadv", "emptyconquest", "emptyscn", "Fonts", "MapObjects", "Minimap", "newmap", "Outlines", "randommap", "RandomMap", "RandomMapSettlements", "Sounds", "Terrain", "UI", "Units", "Visuals", lastUpdate };
+            List<string> noMods = new List<string> { "AdditionalArt", "Buildings", "data", "emptyadv", "emptyconquest", "emptyscn", "Fonts", "MapObjects", "Minimap", "newmap", "Outlines", "randommap", "RandomMap", "RandomMapSettlements", "Sounds", "Terrain", "UI", "Units", "Visuals" };
             var pakMods = new DirectoryInfo("Packs").GetFiles("*.pak");
             for (int i = 0; i < pakMods.Length; i++)
             {
@@ -248,6 +248,20 @@ namespace launcher_imperivm_iii
                     if (name != name.ToUpper())
                     {
                         listMods.SetItemChecked(listMods.FindStringExact(name.ToLower()), true);
+                    }
+                }
+            }
+
+            var pakModsDisable = new DirectoryInfo("Packs/disable/").GetFiles("*.pak");
+            for (int i = 0; i < pakModsDisable.Length; i++)
+            {
+                String name = pakModsDisable[i].Name.Split('.')[0];
+                if (!noMods.Contains(name))
+                {
+                    listMods.Items.Add(name.ToLower());
+                    if (name != name.ToUpper())
+                    {
+                        listMods.SetItemChecked(listMods.FindStringExact(name.ToLower()), false);
                     }
                 }
             }
@@ -263,14 +277,26 @@ namespace launcher_imperivm_iii
         private void listMods_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             String item = listMods.Items[e.Index].ToString();
-            if (listMods.GetItemChecked(listMods.FindStringExact(item)))
+
+            if (!Directory.Exists(@"Packs/disable/"))
             {
-                System.IO.File.Move(@"Packs/" + item + ".pak", @"Packs/" + item.ToUpper() + ".pak");
+                Directory.CreateDirectory(@"Packs/disable/");
             }
-            else
+
+
+            try
             {
-                System.IO.File.Move(@"Packs/" + item.ToUpper() + ".pak", @"Packs/" + item + ".pak");
+                if (listMods.GetItemChecked(listMods.FindStringExact(item)))
+                {
+                    System.IO.File.Move(@"Packs/" + item + ".pak", @"Packs/disable/" + item + ".pak");
+                }
+                else
+                {
+                    System.IO.File.Move(@"Packs/disable/" + item + ".pak", @"Packs/" + item + ".pak");
+                }
             }
+            catch { }
+            
 
         }
 
